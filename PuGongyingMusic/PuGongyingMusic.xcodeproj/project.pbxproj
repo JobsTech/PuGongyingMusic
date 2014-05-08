@@ -48,6 +48,7 @@
 		550DCC8D191B96EF00E1016A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550DCC8C191B96EF00E1016A /* SystemConfiguration.framework */; };
 		550DCC90191BA0ED00E1016A /* PGYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCC8F191BA0ED00E1016A /* PGYSearchViewController.m */; };
 		550DCC93191BA1EF00E1016A /* PGYMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCC92191BA1EF00E1016A /* PGYMyViewController.m */; };
+		550DCC98191BA79600E1016A /* PGYTopListMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCC97191BA79600E1016A /* PGYTopListMusicViewController.m */; };
 		55F3BE83191A764800561524 /* PGYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE7D191A764800561524 /* PGYTabBarController.m */; };
 		55F3BE88191A768C00561524 /* DDScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE87191A768C00561524 /* DDScrollViewController.m */; };
 		55F3BE8B191A76D600561524 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE8A191A76D600561524 /* HomeViewController.m */; };
@@ -226,6 +227,8 @@
 		550DCC8F191BA0ED00E1016A /* PGYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYSearchViewController.m; sourceTree = "<group>"; };
 		550DCC91191BA1EF00E1016A /* PGYMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYMyViewController.h; sourceTree = "<group>"; };
 		550DCC92191BA1EF00E1016A /* PGYMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYMyViewController.m; sourceTree = "<group>"; };
+		550DCC96191BA79600E1016A /* PGYTopListMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTopListMusicViewController.h; sourceTree = "<group>"; };
+		550DCC97191BA79600E1016A /* PGYTopListMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTopListMusicViewController.m; sourceTree = "<group>"; };
 		55F3BE7C191A764800561524 /* PGYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTabBarController.h; sourceTree = "<group>"; };
 		55F3BE7D191A764800561524 /* PGYTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTabBarController.m; sourceTree = "<group>"; };
 		55F3BE86191A768C00561524 /* DDScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDScrollViewController.h; sourceTree = "<group>"; };
@@ -270,7 +273,6 @@
 		937CA10F191B0BF60017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
 		937CA112191B0C290017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
 		937CA113191B0C2E0017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
-		937CA114191B0C390017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
 		937CA115191B0C3E0017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
 		937CA116191B0C430017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
 		937CA118191B0C510017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
@@ -764,7 +766,8 @@
 		937CA0F4191AF9880017542D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				937CA114191B0C390017542D /* fox.h */,
+				550DCC96191BA79600E1016A /* PGYTopListMusicViewController.h */,
+				550DCC97191BA79600E1016A /* PGYTopListMusicViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -937,6 +940,7 @@
 				937CA10A191B0B460017542D /* PGYNewSongViewController.m in Sources */,
 				550DCC67191B961A00E1016A /* base64.m in Sources */,
 				937CA0BC191AF9750017542D /* main.m in Sources */,
+				550DCC98191BA79600E1016A /* PGYTopListMusicViewController.m in Sources */,
 				550DCBDA191B82D900E1016A /* PGYTopMenuView.m in Sources */,
 				550DCC6C191B961A00E1016A /* RSADataVerifier.m in Sources */,
 				55F3BE88191A768C00561524 /* DDScrollViewController.m in Sources */,
