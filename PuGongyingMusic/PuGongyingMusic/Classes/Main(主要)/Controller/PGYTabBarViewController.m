@@ -27,12 +27,13 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
+    self.tabBarItem.title = @"首页";//2014年05月07日17:01:07王涛修改
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 @end
