@@ -19,8 +19,28 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        [self setUpViews];
     }
     return self;
+}
+
+-(void)setUpViews{
+
+
+}
+
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+
+
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+
+
+
 }
 
 - (void)viewDidLoad
