@@ -7,7 +7,7 @@
 //
 
 #import "PGYAppDelegate.h"
-#import "PGYTabBarViewController.h"
+#import "PGYTabBarController.h"
 @implementation PGYAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -18,7 +18,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.rootViewController = [[PGYTabBarViewController alloc]init];
+    self.window.rootViewController = [[PGYTabBarController alloc]init];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

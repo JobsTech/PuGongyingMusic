@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550DCBB9191B712700E1016A /* PGYButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCBB8191B712700E1016A /* PGYButtonModel.m */; };
+		550DCBC5191B7B2C00E1016A /* 000@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBBB191B7B2C00E1016A /* 000@2x.jpg */; };
+		550DCBC6191B7B2C00E1016A /* 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBBC191B7B2C00E1016A /* 001.jpg */; };
+		550DCBC7191B7B2C00E1016A /* 002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBBD191B7B2C00E1016A /* 002.jpg */; };
+		550DCBC8191B7B2C00E1016A /* 003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBBE191B7B2C00E1016A /* 003.jpg */; };
+		550DCBC9191B7B2C00E1016A /* 004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBBF191B7B2C00E1016A /* 004.jpg */; };
+		550DCBCA191B7B2C00E1016A /* 005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBC0191B7B2C00E1016A /* 005.jpg */; };
+		550DCBCB191B7B2C00E1016A /* 006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBC1191B7B2C00E1016A /* 006.jpg */; };
+		550DCBCC191B7B2C00E1016A /* 007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBC2191B7B2C00E1016A /* 007.jpg */; };
+		550DCBCD191B7B2C00E1016A /* 008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBC3191B7B2C00E1016A /* 008.jpg */; };
+		550DCBCE191B7B2C00E1016A /* 009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 550DCBC4191B7B2C00E1016A /* 009.jpg */; };
+		550DCBD9191B82D900E1016A /* PGYTopMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCBD6191B82D900E1016A /* PGYTopMenuButton.m */; };
+		550DCBDA191B82D900E1016A /* PGYTopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCBD8191B82D900E1016A /* PGYTopMenuView.m */; };
+		55F3BE83191A764800561524 /* PGYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE7D191A764800561524 /* PGYTabBarController.m */; };
+		55F3BE88191A768C00561524 /* DDScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE87191A768C00561524 /* DDScrollViewController.m */; };
+		55F3BE8B191A76D600561524 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE8A191A76D600561524 /* HomeViewController.m */; };
+		55F3BE90191A76E300561524 /* PGYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE8D191A76E300561524 /* PGYSearchViewController.m */; };
+		55F3BE91191A76E300561524 /* PGYMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE8F191A76E300561524 /* PGYMyViewController.m */; };
+		55F3BE99191A79D400561524 /* PGYTabBarButtomCusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE94191A79D400561524 /* PGYTabBarButtomCusView.m */; };
+		55F3BE9A191A79D400561524 /* PGYTabBarMusicPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE96191A79D400561524 /* PGYTabBarMusicPlayView.m */; };
+		55F3BE9B191A79D400561524 /* PGYTabBarSettingBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE98191A79D400561524 /* PGYTabBarSettingBgView.m */; };
+		55F3BE9E191A888D00561524 /* PGYCusScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE9D191A888D00561524 /* PGYCusScrollView.m */; };
+		55F3BEA1191A896B00561524 /* PGYSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BEA0191A896B00561524 /* PGYSettingView.m */; };
+		55F3BEA9191A8B7700561524 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BEA6191A8B7700561524 /* UIImage+Extension.m */; };
+		55F3BEAA191A8B7700561524 /* UIEvent+Expand.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BEA8191A8B7700561524 /* UIEvent+Expand.m */; };
+		55F3BEAD191A8B8700561524 /* PGyMyDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BEAC191A8B8700561524 /* PGyMyDB.m */; };
+		55F3BEB0191A95FC00561524 /* PGYMusicProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BEAF191A95FC00561524 /* PGYMusicProgressBar.m */; };
 		937CA0AE191AF9750017542D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937CA0AD191AF9750017542D /* Foundation.framework */; };
 		937CA0B0191AF9750017542D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937CA0AF191AF9750017542D /* CoreGraphics.framework */; };
 		937CA0B2191AF9750017542D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937CA0B1191AF9750017542D /* UIKit.framework */; };
@@ -22,10 +49,8 @@
 		937CA0CF191AF9760017542D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937CA0B3191AF9750017542D /* CoreData.framework */; };
 		937CA0D7191AF9760017542D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 937CA0D5191AF9760017542D /* InfoPlist.strings */; };
 		937CA0D9191AF9760017542D /* PuGongyingMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 937CA0D8191AF9760017542D /* PuGongyingMusicTests.m */; };
-		937CA0FD191AF9EF0017542D /* PGYTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937CA0FC191AF9EF0017542D /* PGYTabBarViewController.m */; };
 		937CA107191B0B360017542D /* PGYLocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937CA106191B0B360017542D /* PGYLocalMusicViewController.m */; };
 		937CA10A191B0B460017542D /* PGYNewSongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937CA109191B0B460017542D /* PGYNewSongViewController.m */; };
-		937CA10D191B0B530017542D /* PGYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 937CA10C191B0B520017542D /* PGYViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +64,50 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		550DCBB7191B712700E1016A /* PGYButtonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYButtonModel.h; sourceTree = "<group>"; };
+		550DCBB8191B712700E1016A /* PGYButtonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYButtonModel.m; sourceTree = "<group>"; };
+		550DCBBB191B7B2C00E1016A /* 000@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "000@2x.jpg"; sourceTree = "<group>"; };
+		550DCBBC191B7B2C00E1016A /* 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 001.jpg; sourceTree = "<group>"; };
+		550DCBBD191B7B2C00E1016A /* 002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 002.jpg; sourceTree = "<group>"; };
+		550DCBBE191B7B2C00E1016A /* 003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 003.jpg; sourceTree = "<group>"; };
+		550DCBBF191B7B2C00E1016A /* 004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 004.jpg; sourceTree = "<group>"; };
+		550DCBC0191B7B2C00E1016A /* 005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 005.jpg; sourceTree = "<group>"; };
+		550DCBC1191B7B2C00E1016A /* 006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 006.jpg; sourceTree = "<group>"; };
+		550DCBC2191B7B2C00E1016A /* 007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 007.jpg; sourceTree = "<group>"; };
+		550DCBC3191B7B2C00E1016A /* 008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 008.jpg; sourceTree = "<group>"; };
+		550DCBC4191B7B2C00E1016A /* 009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 009.jpg; sourceTree = "<group>"; };
+		550DCBD5191B82D900E1016A /* PGYTopMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTopMenuButton.h; sourceTree = "<group>"; };
+		550DCBD6191B82D900E1016A /* PGYTopMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTopMenuButton.m; sourceTree = "<group>"; };
+		550DCBD7191B82D900E1016A /* PGYTopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTopMenuView.h; sourceTree = "<group>"; };
+		550DCBD8191B82D900E1016A /* PGYTopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTopMenuView.m; sourceTree = "<group>"; };
+		55F3BE7C191A764800561524 /* PGYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTabBarController.h; sourceTree = "<group>"; };
+		55F3BE7D191A764800561524 /* PGYTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTabBarController.m; sourceTree = "<group>"; };
+		55F3BE86191A768C00561524 /* DDScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDScrollViewController.h; sourceTree = "<group>"; };
+		55F3BE87191A768C00561524 /* DDScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDScrollViewController.m; sourceTree = "<group>"; };
+		55F3BE89191A76D600561524 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		55F3BE8A191A76D600561524 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		55F3BE8C191A76E300561524 /* PGYSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYSearchViewController.h; sourceTree = "<group>"; };
+		55F3BE8D191A76E300561524 /* PGYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYSearchViewController.m; sourceTree = "<group>"; };
+		55F3BE8E191A76E300561524 /* PGYMyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYMyViewController.h; sourceTree = "<group>"; };
+		55F3BE8F191A76E300561524 /* PGYMyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYMyViewController.m; sourceTree = "<group>"; };
+		55F3BE93191A79D400561524 /* PGYTabBarButtomCusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTabBarButtomCusView.h; sourceTree = "<group>"; };
+		55F3BE94191A79D400561524 /* PGYTabBarButtomCusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTabBarButtomCusView.m; sourceTree = "<group>"; };
+		55F3BE95191A79D400561524 /* PGYTabBarMusicPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTabBarMusicPlayView.h; sourceTree = "<group>"; };
+		55F3BE96191A79D400561524 /* PGYTabBarMusicPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTabBarMusicPlayView.m; sourceTree = "<group>"; };
+		55F3BE97191A79D400561524 /* PGYTabBarSettingBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTabBarSettingBgView.h; sourceTree = "<group>"; };
+		55F3BE98191A79D400561524 /* PGYTabBarSettingBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTabBarSettingBgView.m; sourceTree = "<group>"; };
+		55F3BE9C191A888D00561524 /* PGYCusScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYCusScrollView.h; sourceTree = "<group>"; };
+		55F3BE9D191A888D00561524 /* PGYCusScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYCusScrollView.m; sourceTree = "<group>"; };
+		55F3BE9F191A896B00561524 /* PGYSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYSettingView.h; sourceTree = "<group>"; };
+		55F3BEA0191A896B00561524 /* PGYSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYSettingView.m; sourceTree = "<group>"; };
+		55F3BEA5191A8B7700561524 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		55F3BEA6191A8B7700561524 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		55F3BEA7191A8B7700561524 /* UIEvent+Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIEvent+Expand.h"; sourceTree = "<group>"; };
+		55F3BEA8191A8B7700561524 /* UIEvent+Expand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIEvent+Expand.m"; sourceTree = "<group>"; };
+		55F3BEAB191A8B8700561524 /* PGyMyDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGyMyDB.h; sourceTree = "<group>"; };
+		55F3BEAC191A8B8700561524 /* PGyMyDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGyMyDB.m; sourceTree = "<group>"; };
+		55F3BEAE191A95FC00561524 /* PGYMusicProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYMusicProgressBar.h; sourceTree = "<group>"; };
+		55F3BEAF191A95FC00561524 /* PGYMusicProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYMusicProgressBar.m; sourceTree = "<group>"; };
 		937CA0AA191AF9750017542D /* PuGongyingMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuGongyingMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937CA0AD191AF9750017542D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		937CA0AF191AF9750017542D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,8 +117,8 @@
 		937CA0B9191AF9750017542D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		937CA0BB191AF9750017542D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		937CA0BD191AF9750017542D /* PuGongyingMusic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PuGongyingMusic-Prefix.pch"; sourceTree = "<group>"; };
-		937CA0BE191AF9750017542D /* PGYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PGYAppDelegate.h; path = ../../PGYAppDelegate.h; sourceTree = "<group>"; };
-		937CA0BF191AF9750017542D /* PGYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PGYAppDelegate.m; path = ../../PGYAppDelegate.m; sourceTree = "<group>"; };
+		937CA0BE191AF9750017542D /* PGYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGYAppDelegate.h; sourceTree = "<group>"; };
+		937CA0BF191AF9750017542D /* PGYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGYAppDelegate.m; sourceTree = "<group>"; };
 		937CA0C2191AF9750017542D /* PuGongyingMusic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PuGongyingMusic.xcdatamodel; sourceTree = "<group>"; };
 		937CA0C4191AF9750017542D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		937CA0CA191AF9760017542D /* PuGongyingMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuGongyingMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,18 +126,12 @@
 		937CA0D4191AF9760017542D /* PuGongyingMusicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PuGongyingMusicTests-Info.plist"; sourceTree = "<group>"; };
 		937CA0D6191AF9760017542D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		937CA0D8191AF9760017542D /* PuGongyingMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuGongyingMusicTests.m; sourceTree = "<group>"; };
-		937CA0FB191AF9EF0017542D /* PGYTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTabBarViewController.h; sourceTree = "<group>"; };
-		937CA0FC191AF9EF0017542D /* PGYTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTabBarViewController.m; sourceTree = "<group>"; };
 		937CA105191B0B360017542D /* PGYLocalMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYLocalMusicViewController.h; sourceTree = "<group>"; };
 		937CA106191B0B360017542D /* PGYLocalMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYLocalMusicViewController.m; sourceTree = "<group>"; };
 		937CA108191B0B460017542D /* PGYNewSongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYNewSongViewController.h; sourceTree = "<group>"; };
 		937CA109191B0B460017542D /* PGYNewSongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYNewSongViewController.m; sourceTree = "<group>"; };
-		937CA10B191B0B520017542D /* PGYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYViewController.h; sourceTree = "<group>"; };
-		937CA10C191B0B520017542D /* PGYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYViewController.m; sourceTree = "<group>"; };
 		937CA10E191B0BF00017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
 		937CA10F191B0BF60017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
-		937CA110191B0C0D0017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
-		937CA111191B0C140017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = fox.h; path = "../../NewSong(新歌)/fox.h"; sourceTree = "<group>"; };
 		937CA112191B0C290017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
 		937CA113191B0C2E0017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
 		937CA114191B0C390017542D /* fox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fox.h; sourceTree = "<group>"; };
@@ -105,6 +168,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		550DCBBA191B7B2C00E1016A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				550DCBBB191B7B2C00E1016A /* 000@2x.jpg */,
+				550DCBBC191B7B2C00E1016A /* 001.jpg */,
+				550DCBBD191B7B2C00E1016A /* 002.jpg */,
+				550DCBBE191B7B2C00E1016A /* 003.jpg */,
+				550DCBBF191B7B2C00E1016A /* 004.jpg */,
+				550DCBC0191B7B2C00E1016A /* 005.jpg */,
+				550DCBC1191B7B2C00E1016A /* 006.jpg */,
+				550DCBC2191B7B2C00E1016A /* 007.jpg */,
+				550DCBC3191B7B2C00E1016A /* 008.jpg */,
+				550DCBC4191B7B2C00E1016A /* 009.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		55F3BE92191A798B00561524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				550DCBD5191B82D900E1016A /* PGYTopMenuButton.h */,
+				550DCBD6191B82D900E1016A /* PGYTopMenuButton.m */,
+				550DCBD7191B82D900E1016A /* PGYTopMenuView.h */,
+				550DCBD8191B82D900E1016A /* PGYTopMenuView.m */,
+				55F3BEAE191A95FC00561524 /* PGYMusicProgressBar.h */,
+				55F3BEAF191A95FC00561524 /* PGYMusicProgressBar.m */,
+				55F3BE9F191A896B00561524 /* PGYSettingView.h */,
+				55F3BEA0191A896B00561524 /* PGYSettingView.m */,
+				55F3BE9C191A888D00561524 /* PGYCusScrollView.h */,
+				55F3BE9D191A888D00561524 /* PGYCusScrollView.m */,
+				55F3BE93191A79D400561524 /* PGYTabBarButtomCusView.h */,
+				55F3BE94191A79D400561524 /* PGYTabBarButtomCusView.m */,
+				55F3BE95191A79D400561524 /* PGYTabBarMusicPlayView.h */,
+				55F3BE96191A79D400561524 /* PGYTabBarMusicPlayView.m */,
+				55F3BE97191A79D400561524 /* PGYTabBarSettingBgView.h */,
+				55F3BE98191A79D400561524 /* PGYTabBarSettingBgView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		55F3BEA2191A8B5B00561524 /* Other(其他) */ = {
+			isa = PBXGroup;
+			children = (
+				550DCBBA191B7B2C00E1016A /* Resources */,
+				55F3BEA3191A8B5B00561524 /* Category */,
+				55F3BEA4191A8B5B00561524 /* DB */,
+			);
+			path = "Other(其他)";
+			sourceTree = "<group>";
+		};
+		55F3BEA3191A8B5B00561524 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				55F3BEA5191A8B7700561524 /* UIImage+Extension.h */,
+				55F3BEA6191A8B7700561524 /* UIImage+Extension.m */,
+				55F3BEA7191A8B7700561524 /* UIEvent+Expand.h */,
+				55F3BEA8191A8B7700561524 /* UIEvent+Expand.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		55F3BEA4191A8B5B00561524 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				55F3BEAB191A8B8700561524 /* PGyMyDB.h */,
+				55F3BEAC191A8B8700561524 /* PGyMyDB.m */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
 		937CA0A1191AF9750017542D = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +275,8 @@
 				937CA0E2191AF9880017542D /* Classes */,
 				937CA0C4191AF9750017542D /* Images.xcassets */,
 				937CA0C1191AF9750017542D /* PuGongyingMusic.xcdatamodeld */,
+				937CA0BE191AF9750017542D /* PGYAppDelegate.h */,
+				937CA0BF191AF9750017542D /* PGYAppDelegate.m */,
 				937CA0B6191AF9750017542D /* Supporting Files */,
 			);
 			path = PuGongyingMusic;
@@ -179,10 +314,10 @@
 		937CA0E2191AF9880017542D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				55F3BEA2191A8B5B00561524 /* Other(其他) */,
 				937CA0E3191AF9880017542D /* LocalMusic(本地音乐) */,
 				937CA0E7191AF9880017542D /* Main(主要) */,
 				937CA0EB191AF9880017542D /* NewSong(新歌) */,
-				937CA0EF191AF9880017542D /* Other(其他) */,
 				937CA0F3191AF9880017542D /* Ranking(榜单) */,
 				937CA0F7191AF9880017542D /* Search(搜索) */,
 			);
@@ -227,9 +362,9 @@
 		937CA0E7191AF9880017542D /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				55F3BE92191A798B00561524 /* View */,
 				937CA0E8191AF9880017542D /* Controller */,
 				937CA0E9191AF9880017542D /* Model */,
-				937CA0EA191AF9880017542D /* View */,
 			);
 			path = "Main(主要)";
 			sourceTree = "<group>";
@@ -237,8 +372,16 @@
 		937CA0E8191AF9880017542D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				937CA0FB191AF9EF0017542D /* PGYTabBarViewController.h */,
-				937CA0FC191AF9EF0017542D /* PGYTabBarViewController.m */,
+				55F3BE8C191A76E300561524 /* PGYSearchViewController.h */,
+				55F3BE8D191A76E300561524 /* PGYSearchViewController.m */,
+				55F3BE8E191A76E300561524 /* PGYMyViewController.h */,
+				55F3BE8F191A76E300561524 /* PGYMyViewController.m */,
+				55F3BE89191A76D600561524 /* HomeViewController.h */,
+				55F3BE8A191A76D600561524 /* HomeViewController.m */,
+				55F3BE86191A768C00561524 /* DDScrollViewController.h */,
+				55F3BE87191A768C00561524 /* DDScrollViewController.m */,
+				55F3BE7C191A764800561524 /* PGYTabBarController.h */,
+				55F3BE7D191A764800561524 /* PGYTabBarController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,17 +389,10 @@
 		937CA0E9191AF9880017542D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				937CA110191B0C0D0017542D /* fox.h */,
+				550DCBB7191B712700E1016A /* PGYButtonModel.h */,
+				550DCBB8191B712700E1016A /* PGYButtonModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		937CA0EA191AF9880017542D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				937CA111191B0C140017542D /* fox.h */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		937CA0EB191AF9880017542D /* NewSong(新歌) */ = {
@@ -292,17 +428,6 @@
 				937CA113191B0C2E0017542D /* fox.h */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		937CA0EF191AF9880017542D /* Other(其他) */ = {
-			isa = PBXGroup;
-			children = (
-				937CA0BE191AF9750017542D /* PGYAppDelegate.h */,
-				937CA0BF191AF9750017542D /* PGYAppDelegate.m */,
-				937CA10B191B0B520017542D /* PGYViewController.h */,
-				937CA10C191B0B520017542D /* PGYViewController.m */,
-			);
-			path = "Other(其他)";
 			sourceTree = "<group>";
 		};
 		937CA0F3191AF9880017542D /* Ranking(榜单) */ = {
@@ -449,8 +574,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550DCBCB191B7B2C00E1016A /* 006.jpg in Resources */,
+				550DCBC9191B7B2C00E1016A /* 004.jpg in Resources */,
+				550DCBCD191B7B2C00E1016A /* 008.jpg in Resources */,
+				550DCBCE191B7B2C00E1016A /* 009.jpg in Resources */,
+				550DCBC5191B7B2C00E1016A /* 000@2x.jpg in Resources */,
+				550DCBCC191B7B2C00E1016A /* 007.jpg in Resources */,
 				937CA0BA191AF9750017542D /* InfoPlist.strings in Resources */,
+				550DCBCA191B7B2C00E1016A /* 005.jpg in Resources */,
 				937CA0C5191AF9750017542D /* Images.xcassets in Resources */,
+				550DCBC8191B7B2C00E1016A /* 003.jpg in Resources */,
+				550DCBC7191B7B2C00E1016A /* 002.jpg in Resources */,
+				550DCBC6191B7B2C00E1016A /* 001.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,13 +604,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550DCBD9191B82D900E1016A /* PGYTopMenuButton.m in Sources */,
+				55F3BEB0191A95FC00561524 /* PGYMusicProgressBar.m in Sources */,
+				55F3BEAA191A8B7700561524 /* UIEvent+Expand.m in Sources */,
 				937CA0C3191AF9750017542D /* PuGongyingMusic.xcdatamodeld in Sources */,
 				937CA10A191B0B460017542D /* PGYNewSongViewController.m in Sources */,
 				937CA0BC191AF9750017542D /* main.m in Sources */,
+				550DCBDA191B82D900E1016A /* PGYTopMenuView.m in Sources */,
+				55F3BE88191A768C00561524 /* DDScrollViewController.m in Sources */,
+				55F3BE9E191A888D00561524 /* PGYCusScrollView.m in Sources */,
+				55F3BEA1191A896B00561524 /* PGYSettingView.m in Sources */,
+				550DCBB9191B712700E1016A /* PGYButtonModel.m in Sources */,
 				937CA107191B0B360017542D /* PGYLocalMusicViewController.m in Sources */,
-				937CA10D191B0B530017542D /* PGYViewController.m in Sources */,
+				55F3BEA9191A8B7700561524 /* UIImage+Extension.m in Sources */,
+				55F3BE83191A764800561524 /* PGYTabBarController.m in Sources */,
+				55F3BEAD191A8B8700561524 /* PGyMyDB.m in Sources */,
 				937CA0C0191AF9750017542D /* PGYAppDelegate.m in Sources */,
-				937CA0FD191AF9EF0017542D /* PGYTabBarViewController.m in Sources */,
+				55F3BE8B191A76D600561524 /* HomeViewController.m in Sources */,
+				55F3BE90191A76E300561524 /* PGYSearchViewController.m in Sources */,
+				55F3BE9A191A79D400561524 /* PGYTabBarMusicPlayView.m in Sources */,
+				55F3BE9B191A79D400561524 /* PGYTabBarSettingBgView.m in Sources */,
+				55F3BE91191A76E300561524 /* PGYMyViewController.m in Sources */,
+				55F3BE99191A79D400561524 /* PGYTabBarButtomCusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
