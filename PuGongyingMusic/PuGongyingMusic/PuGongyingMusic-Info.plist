@@ -24,6 +24,10 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>RSA private key</key>
+	<string>MIIBUwIBADANBgkqhkiG9w0BAQEFAASCAT0wggE5AgEAAkEAiC1VoGFuUj8sNSMhU146lxqufSy0Z9ro3jlX+rRWnbY6e7owJep5rvaKO1/CXZsJWnHTgWqOcaSUqOwWwLDScwIDAQABAkBOtz3mzksSGdg5AwyRf0eI7vBsBPpnih/PzP/xOGtVEA9MsYw3RAMNMsgNzcErJQDOiR+oIOugrPijexrgiYaJAiEA+RlvIJiaxDJb1hYu9GGsghmf9nP5pJHK+94etQBZpncCIQCL8xOs+QGn7Db6t9wlHi9jeX1pbycbscygdYXBTpDm5QIgCee3AYbP8KlH+ZVcPJ99qpa2Q6iM7rxVY/qLIgtnhTUCICRTZPEJ9T8UFjU/0hmkWyKT31SlsF4E6ZtgxeYmMYBtAiAfNVzGx2WUb4H6lfsb5uLGPEGTX4A4pGL1mhbWQI7MDg==</string>
+	<key>RSA public key</key>
+	<string>MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIgtVaBhblI/LDUjIVNeOpcarn0stGfa6N45V/q0Vp22Onu6MCXqea72ijtfwl2bCVpx04FqjnGklKjsFsCw0nMCAwEAAQ==</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

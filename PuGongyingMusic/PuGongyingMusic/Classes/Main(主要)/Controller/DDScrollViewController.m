@@ -19,6 +19,7 @@
 @property (nonatomic) BOOL isShowRighting;
 @property(nonatomic,strong)UIView *topBgView;
 @property  (nonatomic,strong)PGYTopMenuView * topMenuView;
+
 @end
 
 @implementation DDScrollViewController
@@ -43,19 +44,7 @@
 }
 
 
--(NSMutableArray *)getButtonModelArray{
-    NSMutableArray *array=[NSMutableArray array];
-    PGYButtonModel *modelsearch=[PGYButtonModel new];
-    modelsearch.bgImageName=@"left_bar_search_h.png";
-    [array addObject:modelsearch];
-    PGYButtonModel *model2=[PGYButtonModel new];
-    model2.title=@"我的";
-    [array addObject:model2];
-    PGYButtonModel *model3=[PGYButtonModel new];
-    model3.title=@"淘歌";
-    [array addObject:model3];
-    return array;
-}
+
 
 
 
@@ -85,21 +74,13 @@
     _topBgView.alpha=0.1;
     
     [self.view addSubview:_topBgView];
+    if ([self topMenuButtonModelArray]&&[self topMenuButtonModelArray].count>0) {
+        _topMenuView=[[PGYTopMenuView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 40) WithButtonModelArray:[self topMenuButtonModelArray] WithSelectIndex:1];
+        _topMenuView.delegate=self;
+        [self.view addSubview:_topMenuView];
+    }
     
-    _topMenuView=[[PGYTopMenuView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 40) WithButtonModelArray:[self getButtonModelArray] WithSelectIndex:1];
-    _topMenuView.delegate=self;
-    [self.view addSubview:_topMenuView];
 }
-
-
-
-#pragma mark -
-- (void)reloadDataFromIndex:(NSInteger)fromIndex ToIndex:(NSInteger)toIndex{
-    
-
-}
-
-
 
 
 
@@ -163,6 +144,13 @@
 {
     return [self.dataSource numberOfViewControllerInDDScrollView:self];
 }
+
+-(NSMutableArray *)topMenuButtonModelArray{
+
+    return [self.dataSource topMenuButtonModelArrayInDDScrollView:self];
+
+}
+
 
 - (void)setOffsetRadio:(CGFloat)offsetRadio
 {

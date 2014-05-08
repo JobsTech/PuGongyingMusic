@@ -19,6 +19,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 200, 100, 100)];
+        
+        [btn setTitle:@"我的" forState:UIControlStateNormal];
+        [self.view addSubview:btn];
     }
     return self;
 }

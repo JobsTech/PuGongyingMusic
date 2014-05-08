@@ -23,4 +23,6 @@
 - (NSUInteger)numberOfViewControllerInDDScrollView:(DDScrollViewController*)DDScrollView;
 - (UIViewController *)ddScrollView:(DDScrollViewController*)ddScrollView contentViewControllerAtIndex:(NSUInteger)index;
 
+- (NSMutableArray *)topMenuButtonModelArrayInDDScrollView:(DDScrollViewController *)ddScrollView;
+
 @end

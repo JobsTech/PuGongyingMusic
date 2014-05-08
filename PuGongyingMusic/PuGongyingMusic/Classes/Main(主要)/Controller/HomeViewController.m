@@ -14,7 +14,7 @@
 
 @interface HomeViewController ()
 @property (nonatomic, strong) NSMutableArray* viewControllerArray;
-
+@property   (nonatomic,strong)NSMutableArray *topMenuButtonModelArray;
 
 
 @end
@@ -46,8 +46,6 @@ UITableViewController *controller1;
 
 
 
-
-
 - (void)loadData
 {
     NSUInteger numberOfPages = 3;
@@ -67,6 +65,18 @@ UITableViewController *controller1;
     
     controller1=[[UITableViewController alloc]init];
     [self.viewControllerArray replaceObjectAtIndex:2 withObject:controller1];
+    
+    
+    self.topMenuButtonModelArray=[NSMutableArray array];
+    PGYButtonModel *modelsearch=[PGYButtonModel new];
+    modelsearch.bgImageName=@"left_bar_search_h.png";
+    [self.topMenuButtonModelArray addObject:modelsearch];
+    PGYButtonModel *model2=[PGYButtonModel new];
+    model2.title=@"我的";
+    [self.topMenuButtonModelArray addObject:model2];
+    PGYButtonModel *model3=[PGYButtonModel new];
+    model3.title=@"淘歌";
+    [self.topMenuButtonModelArray addObject:model3];
  
     
     
@@ -86,7 +96,9 @@ UITableViewController *controller1;
 }
 
 
-
+- (NSMutableArray *)topMenuButtonModelArrayInDDScrollView:(DDScrollViewController *)ddScrollView{
+    return self.topMenuButtonModelArray;
+}
 
 
 
