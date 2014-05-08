@@ -24,7 +24,6 @@
 		550DCC6C191B961A00E1016A /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCC48191B961900E1016A /* RSADataVerifier.m */; };
 		550DCC6D191B961A00E1016A /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 550DCC49191B961900E1016A /* libcrypto.a */; };
 		550DCC6E191B961A00E1016A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 550DCC4A191B961900E1016A /* libssl.a */; };
-		550DCC6F191B961A00E1016A /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 550DCC4C191B961900E1016A /* MJRefresh.bundle */; };
 		550DCC70191B961A00E1016A /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCC4F191B961900E1016A /* MJRefreshBaseView.m */; };
 		550DCC71191B961A00E1016A /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCC51191B961A00E1016A /* MJRefreshConst.m */; };
 		550DCC72191B961A00E1016A /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 550DCC53191B961A00E1016A /* MJRefreshFooterView.m */; };
@@ -196,7 +195,6 @@
 		550DCC48191B961900E1016A /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
 		550DCC49191B961900E1016A /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
 		550DCC4A191B961900E1016A /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		550DCC4C191B961900E1016A /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		550DCC4D191B961900E1016A /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		550DCC4E191B961900E1016A /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		550DCC4F191B961900E1016A /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -502,7 +500,6 @@
 		550DCC4B191B961900E1016A /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				550DCC4C191B961900E1016A /* MJRefresh.bundle */,
 				550DCC4D191B961900E1016A /* MJRefresh.h */,
 				550DCC4E191B961900E1016A /* MJRefreshBaseView.h */,
 				550DCC4F191B961900E1016A /* MJRefreshBaseView.m */,
@@ -908,7 +905,6 @@
 				550DCC7A191B961A00E1016A /* 006.jpg in Resources */,
 				550DCC7C191B961A00E1016A /* 008.jpg in Resources */,
 				937CA0C5191AF9750017542D /* Images.xcassets in Resources */,
-				550DCC6F191B961A00E1016A /* MJRefresh.bundle in Resources */,
 				550DCC79191B961A00E1016A /* 005.jpg in Resources */,
 				550DCC74191B961A00E1016A /* 000@2x.jpg in Resources */,
 				550DCC75191B961A00E1016A /* 001.jpg in Resources */,
