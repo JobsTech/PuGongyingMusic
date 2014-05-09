@@ -15,3 +15,6 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
 #endif
+
+
+#define APP_ID   @"004647137810008705"      // 测试专用

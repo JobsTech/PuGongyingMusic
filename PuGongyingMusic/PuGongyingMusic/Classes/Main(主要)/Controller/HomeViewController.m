@@ -11,21 +11,28 @@
 #import "PGYMyViewController.h"
 #import "PGYTopMenuView.h"
 #import "PGYButtonModel.h"
+#import "PGYTopListMusicViewController.h"
 
 @interface HomeViewController ()
+{
+    PGYSearchViewController *searchController;
+    
+    PGYMyViewController *myController;
+    
+    PGYTopListMusicViewController *topListController;
+    
+    
+}
 @property (nonatomic, strong) NSMutableArray* viewControllerArray;
 @property   (nonatomic,strong)NSMutableArray *topMenuButtonModelArray;
+
 
 
 @end
 
 @implementation HomeViewController
 
-PGYSearchViewController *searchController;
 
-PGYMyViewController *myController;
-
-UITableViewController *controller1;
 - (void)viewDidLoad
 {
     self.dataSource = self;
@@ -63,8 +70,8 @@ UITableViewController *controller1;
     [self.viewControllerArray replaceObjectAtIndex:1 withObject:myController];
     
     
-    controller1=[[UITableViewController alloc]init];
-    [self.viewControllerArray replaceObjectAtIndex:2 withObject:controller1];
+    topListController=[[PGYTopListMusicViewController alloc]init];
+    [self.viewControllerArray replaceObjectAtIndex:2 withObject:topListController];
     
     
     self.topMenuButtonModelArray=[NSMutableArray array];
@@ -86,7 +93,6 @@ UITableViewController *controller1;
 
 - (NSUInteger)numberOfViewControllerInDDScrollView:(DDScrollViewController *)DDScrollView
 {
-    NSLog(@"%d",[self.viewControllerArray count]);
     return [self.viewControllerArray count];
 }
 

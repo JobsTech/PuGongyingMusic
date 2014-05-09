@@ -7,8 +7,14 @@
 //
 
 #import "PGYTopListMusicViewController.h"
+#import "PGYChartInfoInterface.h"
+#import "ChartInfoEntity.h"
 
-@interface PGYTopListMusicViewController ()
+@interface PGYTopListMusicViewController ()<PGYChartInfoInterfaceDelegate>
+{
+    PGYChartInfoInterface * chartInfoInterface;
+
+}
 
 @end
 
@@ -27,12 +33,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    chartInfoInterface=[[PGYChartInfoInterface alloc]init];
+    chartInfoInterface.delegate=self;
+    [chartInfoInterface downloadChartInfoWithPageNum:@"1" AndCurrPageCount:@"20"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)arrayWithDownChartInfoComplete:(NSMutableArray *)chartInfoArray{
+    for (ChartInfoEntity *model in chartInfoArray) {
+        NSLog(@"%@",model);
+    }
+
+
 }
 
 /*

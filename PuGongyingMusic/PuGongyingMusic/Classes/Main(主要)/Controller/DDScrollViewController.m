@@ -88,7 +88,7 @@
 
 - (void)reloadData
 {
-    NSLog(@"reloadData");
+  
     NSArray *subViews = [self.scrollView subviews];
     if([subViews count] != 0)
     {
@@ -186,15 +186,13 @@
     }
     
     if (scrollView.contentOffset.x>640) {
-        NSLog(@"%f",scrollView.contentOffset.x);
+       
       
         [scrollView setContentOffset:CGPointMake(640, 0)];
     }
     
-    
-    NSLog(@"%f",scrollView.contentOffset.x);
     self.offsetRadio = scrollView.contentOffset.x/CGRectGetWidth(scrollView.frame) - 1;
-    NSLog(@"%f",self.offsetRadio);
+
     
     if (_isShowRighting) {
         [self.scrollView setContentOffset:CGPointMake(640, 0)];
@@ -242,7 +240,6 @@
 
 -(void)selectFinishIndex:(NSInteger)selectIndex{
     [UIView animateWithDuration:0.3  animations:^{
-        NSLog(@"%f",self.scrollView.contentOffset.x);
         self.scrollView.contentOffset=CGPointMake(CGRectGetWidth(self.view.frame)*selectIndex, 0);
     } completion:^(BOOL finished) {
         
