@@ -14,6 +14,10 @@
 @property (nonatomic, weak) id <DDScrollViewDataSource> dataSource;
 
 - (void)reloadData;
+
+-(void)showTopMenuView;
+
+-(void)hideTopMenuView;
 @end
 
 
@@ -24,5 +28,7 @@
 - (UIViewController *)ddScrollView:(DDScrollViewController*)ddScrollView contentViewControllerAtIndex:(NSUInteger)index;
 
 - (NSMutableArray *)topMenuButtonModelArrayInDDScrollView:(DDScrollViewController *)ddScrollView;
+
+
 
 @end

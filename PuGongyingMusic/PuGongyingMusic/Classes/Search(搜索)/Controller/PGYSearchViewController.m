@@ -7,33 +7,63 @@
 //
 
 #import "PGYSearchViewController.h"
+#import "PGYSearchBar.h"
 
 @interface PGYSearchViewController ()
+
+@property(nonatomic,strong)PGYSearchBar *searchBar;
+
 
 @end
 
 @implementation PGYSearchViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        
-        UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 200, 100, 100)];
-        
-        [btn setTitle:@"搜索" forState:UIControlStateNormal];
-        [self.view addSubview:btn];
-        
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setUpViews];
 }
+
+-(void)setUpViews{
+    _searchBar=[[PGYSearchBar alloc]initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 40)];
+    
+    [self.view addSubview:_searchBar];
+    
+    
+    [self setUpContent];
+
+
+}
+
+-(void)setUpContent{
+    float scrollViewH=120;
+    UIScrollView *scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, scrollViewH, self.view.frame.size.width, self.view.frame.size.height-scrollViewH-50)];
+    
+    [scrollView setBackgroundColor:[UIColor blackColor]];
+    
+    
+    [self.view addSubview:scrollView];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+}
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

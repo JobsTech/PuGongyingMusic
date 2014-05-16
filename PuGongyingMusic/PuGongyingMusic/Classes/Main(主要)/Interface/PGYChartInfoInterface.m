@@ -12,7 +12,7 @@
 
 
 @interface PGYChartInfoInterface()<QueryResultDelegate>
-
+@property(nonatomic,strong)EnablerSDK *  enablerSDK;
 @end
 
 
@@ -25,9 +25,9 @@
 {
     
     
-    EnablerSDK * enablerSDK = [EnablerSDK shared];
-    enablerSDK.delegate = self;
-    [enablerSDK EnablerCalling:@"getChartInfo" Parameter:[NSString stringWithFormat:@"%@&%@",pageNum,currPageCount] ID:APP_ID rsaSign:@""];  // 页码&每页条数
+    _enablerSDK = [EnablerSDK shared];
+    _enablerSDK.delegate = self;
+    [_enablerSDK EnablerCalling:@"getChartInfo" Parameter:[NSString stringWithFormat:@"%@&%@",pageNum,currPageCount] ID:APP_ID rsaSign:@""];  // 页码&每页条数
 }
 
 
@@ -37,6 +37,12 @@
     NSData * aData = [queryResult dataUsingEncoding:NSUTF8StringEncoding];
     ChartInfoParser *parse=[[ChartInfoParser alloc]init];
     [self.delegate arrayWithDownChartInfoComplete:[parse arrayWithParseData:aData]];
+}
+
+
+-(void)dealloc{
+    _enablerSDK.delegate=nil;
+    _enablerSDK=nil;
 }
 
 

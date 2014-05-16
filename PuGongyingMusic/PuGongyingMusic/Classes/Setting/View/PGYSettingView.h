@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PGYTabBarController;
 
 @interface PGYSettingView : UIView
+
+@property(nonatomic,weak)UITabBarController *  tabBarController;
+
+
 
 @end

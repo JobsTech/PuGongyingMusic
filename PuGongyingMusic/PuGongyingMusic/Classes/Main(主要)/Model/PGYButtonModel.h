@@ -33,4 +33,7 @@
 
 @property (nonatomic,strong) NSString *bgImageName;
 
+
+@property(nonatomic,assign)Class   actionClass;
+
 @end

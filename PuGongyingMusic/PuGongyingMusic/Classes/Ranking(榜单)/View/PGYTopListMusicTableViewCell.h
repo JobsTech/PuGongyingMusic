@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ChartInfoEntity.h"
+#import "PGYTopListMusicViewController.h"
 
 @interface PGYTopListMusicTableViewCell : UITableViewCell
 
 @property(nonatomic,strong)ChartInfoEntity *chartInfoEntity;
+@property(nonatomic,weak)UINavigationController *superController;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 

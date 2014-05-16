@@ -12,6 +12,8 @@
 
 @interface PGYSearchMusicListInterface()<QueryResultDelegate>
 
+@property(nonatomic,strong)EnablerSDK *  enablerSDK;
+
 @end
 
 
@@ -20,9 +22,14 @@
 
 - (void) downloadMusicListWithSearchKey:(NSString*)keyWord AndPageNum:(NSString *)pageNum AndCurrPageCount:(NSString *)currPageCount{
     
-    EnablerSDK * enablerSDK = [EnablerSDK shared];
-    enablerSDK.delegate = self;
-    [enablerSDK EnablerCalling:@"getChartInfo" Parameter:[NSString stringWithFormat:@"%@&%@",pageNum,currPageCount] ID:APP_ID rsaSign:@""];  // 页码&每页条数
+    _enablerSDK = [EnablerSDK shared];
+    _enablerSDK.delegate = self;
+//    @"%@&0&%@&%@"
+    
+    
+    [_enablerSDK EnablerCalling:@"getMusicsByKey" Parameter:[NSString stringWithFormat:@"%@&0&%@&%@",keyWord,pageNum,currPageCount] ID:APP_ID rsaSign:@""];  // 页码&每页条数
+    
+//    [enablerSDK EnablerCalling:@"getMusicsByKey" Parameter:[NSString stringWithFormat:@"zjl&0&1&20"] ID:APP_ID rsaSign:@""];  // 页码&每页条数
 }
 
 
@@ -32,6 +39,13 @@
     NSData * aData = [queryResult dataUsingEncoding:NSUTF8StringEncoding];
     ChartMusicListParser *parse=[[ChartMusicListParser alloc]init];
     [self.delegate arrayWithDownSearchMusicListComplete:[parse arrayWithParseData:aData]];
+}
+
+
+
+-(void)dealloc{
+    _enablerSDK.delegate=nil;
+    _enablerSDK=nil;
 }
 
 @end

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PGYTopListMusicViewController.h"
 
 @interface PGYTopListMusicTableView : UITableView
+
+@property(nonatomic,weak)UINavigationController *superController;
+
 
 @end

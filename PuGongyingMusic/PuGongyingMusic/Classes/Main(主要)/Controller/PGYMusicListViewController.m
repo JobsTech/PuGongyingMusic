@@ -7,6 +7,7 @@
 //
 
 #import "PGYMusicListViewController.h"
+#import "PGYMusicListTableView.h"
 
 @interface PGYMusicListViewController ()
 
@@ -14,38 +15,31 @@
 
 @implementation PGYMusicListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view setBackgroundColor:[UIColor blackColor]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self setUpViews];
+
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)setUpViews{
+    
+    PGYMusicListTableView *tableView=[[PGYMusicListTableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-60) AndMusicListType:PGYMusicListNetSearchMusicList AndKeyWord:@"周杰伦" AndChartId:nil];
+    
+    [self.view addSubview:tableView];
+
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
+
+
+
 
 @end

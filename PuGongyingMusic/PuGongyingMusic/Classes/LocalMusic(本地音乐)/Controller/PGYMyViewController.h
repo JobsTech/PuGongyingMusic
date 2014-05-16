@@ -10,4 +10,9 @@
 
 @interface PGYMyViewController : UIViewController
 
+
+
+@property(nonatomic,weak)UINavigationController *superController;
+
+
 @end

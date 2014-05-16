@@ -13,6 +13,7 @@
 #import "PGYSettingView.h"
 #import "UIEvent+Expand.h"
 #import "PGYTabBarSettingBgView.h"
+#import "PGYHomeNavigationController.h"
 
 @interface PGYTabBarController ()<PGYTabBarMusicPlayViewDelegate>
 
@@ -42,6 +43,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    self.view.userInteractionEnabled=YES;
+    
     //设置tabBar的Controllers
     [self setViewControllers];
     //移除tabBar
@@ -77,7 +80,7 @@
 
 
 - (void)handlePanTap:(UIPanGestureRecognizer *)recongnizer{
-    NSLog(@"tabbarhandlePanTap");
+//    NSLog(@"tabbarhandlePanTap");
     CGPoint movePoint=[recongnizer translationInView:self.view];
     
     
@@ -103,7 +106,7 @@
 
     
     
-    NSLog(@"%f    %f",movePoint.x,movePoint.y);
+//    NSLog(@"%f    %f",movePoint.x,movePoint.y);
     
 }
 
@@ -120,7 +123,7 @@
 
 
 -(void)handleSwipTap:(UISwipeGestureRecognizer *)recognizer{
-    NSLog(@"tabbarhandleSwipTap---%hhd",recognizer.delaysTouchesEnded);
+//    NSLog(@"tabbarhandleSwipTap---%hhd",recognizer.delaysTouchesEnded);
     [_musicPlayView showView];
 }
 
@@ -128,9 +131,10 @@
 
 
 -(void)setViewControllers{
-    
+    PGYHomeNavigationController *navigationController=[[PGYHomeNavigationController alloc]init];
     HomeViewController *homeViewController=[[HomeViewController alloc]init];
-    [self setViewControllers:@[homeViewController]];
+    [navigationController pushViewController:homeViewController animated:NO];
+    [self setViewControllers:@[navigationController]];
 
 }
 
@@ -148,6 +152,7 @@
     
     
     _settingView=[[PGYSettingView alloc]initWithFrame:CGRectMake(self.view.frame.size.width, 0, 150, self.view.frame.size.height)];
+    _settingView.tabBarController=self;
     [self.view addSubview:_settingView];
     
     UIImageView *bgView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -172,7 +177,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    NSLog(@"touchbegin");
+//    NSLog(@"touchbegin");
     _startTouchPoint=[event pointEventWithView:self.view];
     if ([self checkCanMoveMusicPlayView]) {
         [self.view removeGestureRecognizer:_panTap];
@@ -186,7 +191,7 @@
 //监听touchMoveing事件
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"touchmoveing..........");
+//    NSLog(@"touchmoveing..........");
     CGPoint moveTouchPoint=[event pointEventWithView:self.view];
     if ([self checkCanMoveMusicPlayView]) {
         float  pointY=self.view.frame.size.height-(_startTouchPoint.y-moveTouchPoint.y);
@@ -198,7 +203,8 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    NSLog(@"touchend");
+//    NSLog(@"touchend");
+    
     
     CGPoint endTouchPoint=[event pointEventWithView:self.view];
     if ([self checkCanMoveMusicPlayView]) {
@@ -245,7 +251,7 @@
     float settingViewW=_settingView.frame.size.width;
     CGPoint movePoint=[recongnizer translationInView:self.view];
     CGPoint point=[recongnizer velocityInView:self.view];
-    NSLog(@"point.......%lf,%lf",point.x,point.y);
+//    NSLog(@"point.......%lf,%lf",point.x,point.y);
     float originX=self.view.frame.origin.x;
 //    if ((movePoint.x>=0&&originX>=0)||(movePoint.x<=0&&originX<=-settingViewW)) {
 //        return;
@@ -266,7 +272,7 @@
     
     
     
-    NSLog(@"%lf,%lf",settingViewW,movePoint.x);
+//    NSLog(@"%lf,%lf",settingViewW,movePoint.x);
     
     if(recongnizer.state == UIGestureRecognizerStateCancelled || recongnizer.state == UIGestureRecognizerStateEnded){
         [UIView animateWithDuration:0.2 animations:^{
@@ -294,7 +300,10 @@
                 [self.settingBgView removeFromSuperview];
                 [self.settingBgView removeGestureRecognizer:_settingBgPanTap];
             }
-            
+            CGRect viewFrame=self.view.frame;
+            float screenW=[UIScreen mainScreen].bounds.size.width;
+            viewFrame.size.width=isShowSetting?screenW+self.settingView.frame.size.width:screenW;
+            self.view.frame=viewFrame;
         }];
     }else{
         
@@ -326,7 +335,7 @@
         [self.settingBgView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:fabsf(x/settingViewW*0.5)+0.2]];
     }
 
-    NSLog(@"adddtabBarSettinBG");
+//    NSLog(@"adddtabBarSettinBG");
 
     
     
@@ -352,5 +361,31 @@
     return _settingBgPanTap;
 
 }
+
+
+-(void)closeSettingViews{
+
+    [UIView animateWithDuration:0.3 animations:^{
+        float screenW=[UIScreen mainScreen].bounds.size.width;
+        self.view.frame=CGRectMake(0, 0, screenW,self.view.frame.size.height);
+        [self.settingBgView removeFromSuperview];
+        [self.settingBgView removeGestureRecognizer:_settingBgPanTap];
+    } completion:^(BOOL finished) {
+        
+    }];
+
+}
+
+
+
+-(void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion{
+
+    [self closeSettingViews];
+    
+    [super presentViewController:viewControllerToPresent animated:flag completion:completion ];
+
+
+}
+
 
 @end

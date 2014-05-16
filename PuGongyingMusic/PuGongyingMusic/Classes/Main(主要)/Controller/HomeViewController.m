@@ -40,7 +40,7 @@
     [self loadData];
     [super viewDidLoad];
     
-    
+
 }
 
 -(void)setUpViews{
@@ -68,11 +68,11 @@
     
     myController=[[PGYMyViewController alloc]init];
     [self.viewControllerArray replaceObjectAtIndex:1 withObject:myController];
-    
+    myController.superController=self.navigationController;
     
     topListController=[[PGYTopListMusicViewController alloc]init];
     [self.viewControllerArray replaceObjectAtIndex:2 withObject:topListController];
-    
+    topListController.superController=self.navigationController;
     
     self.topMenuButtonModelArray=[NSMutableArray array];
     PGYButtonModel *modelsearch=[PGYButtonModel new];
@@ -94,6 +94,8 @@
 - (NSUInteger)numberOfViewControllerInDDScrollView:(DDScrollViewController *)DDScrollView
 {
     return [self.viewControllerArray count];
+    
+    
 }
 
 - (UIViewController*)ddScrollView:(DDScrollViewController *)ddScrollView contentViewControllerAtIndex:(NSUInteger)index
@@ -106,6 +108,17 @@
     return self.topMenuButtonModelArray;
 }
 
+
+-(void)hideViews{
+    [self hideTopMenuView];
+
+}
+
+-(void)showViews{
+
+    [self showTopMenuView];
+
+}
 
 
 

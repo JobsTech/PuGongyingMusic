@@ -12,18 +12,18 @@
 
 
 @interface PGYChartMusicListInterface()<QueryResultDelegate>
-
+@property(nonatomic,strong)EnablerSDK *  enablerSDK;
 @end
 
 @implementation PGYChartMusicListInterface
 
 
 - (void) downloadMusicListWithChartId:(NSString*)chartId AndPageNum:(NSString *)pageNum AndCurrPageCount:(NSString *)currPageCount{
-
     
-    EnablerSDK * enablerSDK = [EnablerSDK shared];
-    enablerSDK.delegate = self;
-    [enablerSDK EnablerCalling:@"getChartInfo" Parameter:[NSString stringWithFormat:@"%@&%@",pageNum,currPageCount] ID:APP_ID rsaSign:@""];  // 页码&每页条数
+    
+    _enablerSDK = [EnablerSDK shared];
+    _enablerSDK.delegate = self;
+    [_enablerSDK EnablerCalling:@"getMusicsByChartId" Parameter:[NSString stringWithFormat:@"%@&%@&%@",chartId,pageNum,currPageCount] ID:APP_ID rsaSign:@""];  // 页码&每页条数
 }
 
 
@@ -34,4 +34,11 @@
     ChartMusicListParser *parse=[[ChartMusicListParser alloc]init];
     [self.delegate arrayWithDownChartMusicListComplete:[parse arrayWithParseData:aData]];
 }
+
+
+-(void)dealloc{
+    _enablerSDK.delegate=nil;
+    _enablerSDK=nil;
+}
+
 @end

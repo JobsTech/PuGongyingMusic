@@ -46,10 +46,11 @@
 //    
 //    [self.view addSubview:topListClassifyView];
     
-    PGYTopListMusicTableView *tableView=[[PGYTopListMusicTableView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height-60-60)];
+    PGYTopListMusicTableView *tableView=[[PGYTopListMusicTableView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height-60-50)];
+    tableView.superController=self.superController;
     [self.view addSubview:tableView];
 
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +67,9 @@
 
     
 }
+
+
+
 
 /*
 #pragma mark - Navigation

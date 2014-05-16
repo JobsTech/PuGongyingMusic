@@ -10,4 +10,7 @@
 
 @interface PGYTopListMusicViewController : UIViewController
 
+
+@property(nonatomic,weak)UINavigationController *superController;
+
 @end

@@ -12,4 +12,8 @@
 
 -(void)moveTarBarControllerWithPanGestureRecognizer:(UIPanGestureRecognizer *)recongnizer WithShow:(BOOL)isShowSetting;
 
+
+-(void)closeSettingViews;
+
+
 @end

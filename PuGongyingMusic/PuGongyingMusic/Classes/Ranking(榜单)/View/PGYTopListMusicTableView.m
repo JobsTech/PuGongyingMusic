@@ -57,6 +57,7 @@
 
 
     PGYTopListMusicTableViewCell *cell=[PGYTopListMusicTableViewCell cellWithTableView:self];
+    cell.superController=self.superController;
     return cell;
     
 }
@@ -93,6 +94,8 @@
 
 //设置cell选中事件
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"willSelectRow");
     return nil;
 
 

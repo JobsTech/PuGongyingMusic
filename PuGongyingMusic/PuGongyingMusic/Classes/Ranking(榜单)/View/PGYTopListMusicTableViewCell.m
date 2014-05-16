@@ -128,14 +128,19 @@
 
 
 -(void)click{
-    UINavigationController *controller=[[UINavigationController alloc]init];
+//    UINavigationController *controller=[[UINavigationController alloc]init];
     PGYMusicListViewController *one=[[PGYMusicListViewController alloc]init];
-    [controller pushViewController:one animated:YES] ;
     
+   
     
+//    
+//    [self.superController presentViewController:controller animated:YES completion:^{
+//        NSLog(@"ssssssssssssssssswancheng");
+//    }];
+    self.superController.navigationBarHidden=NO;
+    self.superController.title=@"淘歌";
+    [self.superController pushViewController:one animated:YES];
 }
-
-
 -(NSMutableArray *)classifyTitleArray{
     
     if (nil==_classifyTitleArray) {
@@ -161,7 +166,14 @@
     
 }
 
+-(void)setHighlighted:(BOOL)highlighted{
 
+
+}
+
+-(void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated{
+
+}
 
 
 
@@ -172,10 +184,7 @@
 }
 
 
--(void)setHighlighted:(BOOL)highlighted{
 
-
-}
 
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated
 //{

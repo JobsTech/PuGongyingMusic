@@ -204,7 +204,8 @@
 
 
 -(void)updateMenu{
-    NSInteger slideProgress=self.scrollView.contentOffset.x/CGRectGetWidth(self.view.frame)*100;
+    float  screenW=[UIScreen mainScreen].bounds.size.width;
+    NSInteger slideProgress=self.scrollView.contentOffset.x/screenW*100;
     slideProgress=slideProgress>=0?slideProgress:-slideProgress;
     [_topMenuView updateSlideViewWithProgress:slideProgress];
 
@@ -223,8 +224,11 @@
     }
     
     if (_isShowRighting) {
-        PGYTabBarController *tabBarCus=self.tabBarController;
-        [tabBarCus moveTarBarControllerWithPanGestureRecognizer:recongnizer WithShow:YES];
+        if ([self.tabBarController isKindOfClass:[PGYTabBarController class]]) {
+            PGYTabBarController *tabBarCus=self.tabBarController;
+            [tabBarCus moveTarBarControllerWithPanGestureRecognizer:recongnizer WithShow:YES];
+        }
+        
     }
   
     if(recongnizer.state == UIGestureRecognizerStateCancelled || recongnizer.state == UIGestureRecognizerStateEnded){
@@ -246,4 +250,20 @@
     }];
     
 }
+
+
+
+
+-(void)showTopMenuView{
+    self.topMenuView.hidden=YES;
+
+}
+
+-(void)hideTopMenuView{
+    self.topMenuView.hidden=NO;
+
+
+}
+
+
 @end
