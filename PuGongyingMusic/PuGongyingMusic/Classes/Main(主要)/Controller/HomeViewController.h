@@ -8,6 +8,6 @@
 
 #import "DDScrollViewController.h"
 
-@interface HomeViewController : DDScrollViewController <DDScrollViewDataSource>
+@interface HomeViewController : DDScrollViewController <DDScrollViewDataSource,DDScrollViewDelegate>
 
 @end

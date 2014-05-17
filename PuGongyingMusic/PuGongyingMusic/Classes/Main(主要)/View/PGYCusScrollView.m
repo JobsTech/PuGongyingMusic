@@ -20,6 +20,13 @@
     return self;
 }
 
+
+-(void)setContentOffset:(CGPoint)contentOffset{
+    
+    [super setContentOffset:CGPointMake(contentOffset.x, 0)];
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -31,21 +38,15 @@
 
 
 
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 
 
-    NSLog(@"ssssssssssmoveing...........");
-}
-
-
-
--(BOOL)touchesShouldCancelInContentView:(UIView *)view{
-
-    NSLog(@"sssssssssssmoveing............");
-    
-    return YES;
-
-}
+//-(BOOL)touchesShouldCancelInContentView:(UIView *)view{
+//
+//    NSLog(@"sssssssssssmoveing............");
+//    
+//    return YES;
+//
+//}
 
 
 @end

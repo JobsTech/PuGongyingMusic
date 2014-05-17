@@ -135,7 +135,7 @@
     HomeViewController *homeViewController=[[HomeViewController alloc]init];
     [navigationController pushViewController:homeViewController animated:NO];
     [self setViewControllers:@[navigationController]];
-
+//    [self setViewControllers:@[homeViewController]];
 }
 
 

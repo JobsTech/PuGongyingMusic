@@ -10,14 +10,22 @@
 
 @protocol DDScrollViewDataSource;
 
+@protocol DDScrollViewDelegate;
+
+
 @interface DDScrollViewController : UIViewController
 @property (nonatomic, weak) id <DDScrollViewDataSource> dataSource;
+
+@property(nonatomic,weak)id<DDScrollViewDelegate>  delegate;
 
 - (void)reloadData;
 
 -(void)showTopMenuView;
 
 -(void)hideTopMenuView;
+
+
+
 @end
 
 
@@ -29,6 +37,11 @@
 
 - (NSMutableArray *)topMenuButtonModelArrayInDDScrollView:(DDScrollViewController *)ddScrollView;
 
+@end
 
+@protocol DDScrollViewDelegate <NSObject>
+
+@required
+-(void)DDScrollViewDidScroll;
 
 @end

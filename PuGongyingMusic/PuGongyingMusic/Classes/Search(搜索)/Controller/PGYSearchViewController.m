@@ -32,7 +32,7 @@
     [self.view addSubview:_searchBar];
     
     
-    [self setUpContent];
+//    [self setUpContent];
 
 
 }
@@ -40,7 +40,7 @@
 -(void)setUpContent{
     float scrollViewH=120;
     UIScrollView *scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, scrollViewH, self.view.frame.size.width, self.view.frame.size.height-scrollViewH-50)];
-    
+    scrollView.bounces=NO;
     [scrollView setBackgroundColor:[UIColor blackColor]];
     
     

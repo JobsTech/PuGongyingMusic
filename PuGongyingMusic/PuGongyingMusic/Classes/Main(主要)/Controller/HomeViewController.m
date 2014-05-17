@@ -12,6 +12,7 @@
 #import "PGYTopMenuView.h"
 #import "PGYButtonModel.h"
 #import "PGYTopListMusicViewController.h"
+#import "PGYMusicListViewController.h"
 
 @interface HomeViewController ()
 {
@@ -20,7 +21,6 @@
     PGYMyViewController *myController;
     
     PGYTopListMusicViewController *topListController;
-    
     
 }
 @property (nonatomic, strong) NSMutableArray* viewControllerArray;
@@ -36,6 +36,7 @@
 - (void)viewDidLoad
 {
     self.dataSource = self;
+    self.delegate =self;
     [self setUpViews];
     [self loadData];
     [super viewDidLoad];
@@ -86,8 +87,11 @@
     [self.topMenuButtonModelArray addObject:model3];
  
     
-    
 }
+
+
+
+
 
 #pragma mark - DDScrollViewDataSource
 
@@ -120,6 +124,10 @@
 
 }
 
+-(void)DDScrollViewDidScroll{
 
+    NSLog(@"scrolling");
+
+}
 
 @end

@@ -26,6 +26,8 @@
 
 - (void)viewDidLoad
 {
+    
+    
     [super viewDidLoad];
     
     [self setUpViews];
@@ -38,12 +40,25 @@
 }
 
 
+
+
+- (void)viewDidAppear:(BOOL)animated{
+//    NSLog(@"%@",self.scrollView);
+//    
+//    for (UIView *view in self.scrollView.subviews) {
+//        NSLog(@"%@",self.view);
+//    }
+    
+    self.scrollView.contentOffset=CGPointZero;
+    
+}
+
+
+
 -(void)setUpViews{
     
 
 }
-
-
 
 
 
@@ -57,6 +72,7 @@
     }
     
     self.scrollView = [[PGYCusScrollView alloc] initWithFrame: self.view.bounds];
+    [self.scrollView setBackgroundColor:[UIColor greenColor]];
     [self.scrollView.panGestureRecognizer addTarget:self action:@selector(handleScrollViewPan:)];
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * ([self numberOfControllers]), CGRectGetHeight(self.view.frame));
     self.scrollView.backgroundColor = [UIColor clearColor];
@@ -65,6 +81,8 @@
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.delegate = self;
     self.scrollView.bounces=NO;
+    
+   
     [self.view addSubview: self.scrollView];
     
     
@@ -181,6 +199,9 @@
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+
+    [self.delegate DDScrollViewDidScroll];
+    
     if (scrollView.contentOffset.x<0) {
         [scrollView setContentOffset:CGPointMake(0,0)];
     }
@@ -228,7 +249,6 @@
             PGYTabBarController *tabBarCus=self.tabBarController;
             [tabBarCus moveTarBarControllerWithPanGestureRecognizer:recongnizer WithShow:YES];
         }
-        
     }
   
     if(recongnizer.state == UIGestureRecognizerStateCancelled || recongnizer.state == UIGestureRecognizerStateEnded){
@@ -264,6 +284,10 @@
 
 
 }
+
+
+
+
 
 
 @end

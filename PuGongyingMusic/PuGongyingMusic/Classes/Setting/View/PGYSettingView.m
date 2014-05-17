@@ -57,7 +57,7 @@
 -(void)setUpView{
     self.userInteractionEnabled=YES;
     [self setBackgroundColor:[UIColor whiteColor]];
-    self.tableView=[[PGYSettingTableView alloc]initWithFrame:CGRectMake(0, 80, self.frame.size.width,self.frame.size.height-80)];
+    self.tableView=[[PGYSettingTableView alloc]initWithFrame:CGRectMake(10, 80, self.frame.size.width-20,self.frame.size.height-80)];
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
     [self addSubview:self.tableView];
@@ -72,15 +72,15 @@
     if (nil==_dataArray) {
         _dataArray=[NSMutableArray array];
        PGYSettingModel *model=[[PGYSettingModel alloc]init];
-        model.title=@"测试";
+        model.title=@"单曲循环";
         [_dataArray addObject:model];
         
         PGYSettingModel *model1=[[PGYSettingModel alloc]init];
-        model.title=@"测试";
+        model1.title=@"更换背景";
         [_dataArray addObject:model1];
         
         PGYSettingModel *model2=[[PGYSettingModel alloc]init];
-        model.title=@"测试";
+        model2.title=@"睡眠关闭";
         [_dataArray addObject:model2];
         
     }
@@ -115,14 +115,12 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return [self.dataArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    PGYSettingModel *model=[PGYSettingModel new];
-    
-    model.title=@"测试";
+    PGYSettingModel *model=[self.dataArray objectAtIndex:indexPath.row];
     
     PGYSettingTableViewCell *cell=[PGYSettingTableViewCell cellWithTableView:self.tableView AndSettingModel:model];
     

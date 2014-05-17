@@ -28,12 +28,17 @@
 
 
 -(void)setUpViews{
+    UIView * contentBgView=[[UIView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height-60-50)];
+    [contentBgView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3]];
+    [self.view addSubview:contentBgView];
+    
+    
     float contentW=self.view.frame.size.width;
     float contentH=50*(([self.btnArrayModel count]+1)/2);
     float contentY=self.view.frame.size.height-contentH-70;
     UIView *contentView=[[UIView alloc]initWithFrame:CGRectMake(0,contentY, contentW, contentH)];
     float splitWH=10;
-    float contentBtnW=(contentW-10*4)/2;
+    float contentBtnW=(contentW-10*3)/2;
     float contentBtnH=30;
     for (int i=0; i<[self.btnArrayModel count]; i++) {
         int cel=i%2; //列
@@ -50,7 +55,7 @@
         [contentView addSubview:btn];
     }
     
-    
+//    [contentView setBackgroundColor:[UIColor redColor]];
     
     [self.view addSubview:contentView];
     
@@ -124,15 +129,6 @@
 
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -18,6 +18,7 @@
         
         [self setBackgroundColor:[UIColor blackColor]];
         self.bounces=NO;
+        self.separatorStyle=NO;
     }
     return self;
 }
