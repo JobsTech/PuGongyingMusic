@@ -62,6 +62,18 @@
 		552F43FF191C81C80022EA89 /* PGYTopListMusicTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F43FE191C81C80022EA89 /* PGYTopListMusicTableView.m */; };
 		552F4402191C81EC0022EA89 /* PGYTopListMusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F4401191C81EC0022EA89 /* PGYTopListMusicTableViewCell.m */; };
 		556060071921BC99000A9545 /* PGYTopListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 556060061921BC99000A9545 /* PGYTopListHeaderView.m */; };
+		55782EB01927EF300076C3E4 /* CUSFillLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782E971927EF2F0076C3E4 /* CUSFillLayout.m */; };
+		55782EB11927EF300076C3E4 /* CUSLayoutData.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782E9B1927EF2F0076C3E4 /* CUSLayoutData.m */; };
+		55782EB21927EF300076C3E4 /* CUSLayoutFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782E9D1927EF2F0076C3E4 /* CUSLayoutFrame.m */; };
+		55782EB31927EF300076C3E4 /* CUSLayoutObject+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782E9F1927EF2F0076C3E4 /* CUSLayoutObject+Util.m */; };
+		55782EB41927EF300076C3E4 /* CUSLayoutUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782EA11927EF2F0076C3E4 /* CUSLayoutUtil.m */; };
+		55782EB51927EF300076C3E4 /* CUSLinnerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782EA31927EF2F0076C3E4 /* CUSLinnerData.m */; };
+		55782EB61927EF300076C3E4 /* CUSLinnerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782EA51927EF2F0076C3E4 /* CUSLinnerLayout.m */; };
+		55782EB71927EF300076C3E4 /* CUSRowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782EA71927EF2F0076C3E4 /* CUSRowData.m */; };
+		55782EB81927EF300076C3E4 /* CUSRowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782EA91927EF2F0076C3E4 /* CUSRowLayout.m */; };
+		55782EB91927EF300076C3E4 /* CUSTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782EAB1927EF2F0076C3E4 /* CUSTableData.m */; };
+		55782EBA1927EF300076C3E4 /* CUSTableLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782EAD1927EF2F0076C3E4 /* CUSTableLayout.m */; };
+		55782EBB1927EF300076C3E4 /* UIView+CUSLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 55782EAF1927EF300076C3E4 /* UIView+CUSLayout.m */; };
 		557A956C19237C2A00B79608 /* PGYSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A956B19237C2A00B79608 /* PGYSettingView.m */; };
 		557A956F19237C4800B79608 /* PGYSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A956E19237C4800B79608 /* PGYSettingViewController.m */; };
 		557A957219237E9A00B79608 /* PGYSettingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 557A957119237E9A00B79608 /* PGYSettingTableView.m */; };
@@ -72,6 +84,7 @@
 		55AF1B6B19231D6300EAFF61 /* PGYHomeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AF1B6A19231D6300EAFF61 /* PGYHomeNavigationController.m */; };
 		55AF1B6E19234B4600EAFF61 /* PGYMusicListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AF1B6D19234B4600EAFF61 /* PGYMusicListTableView.m */; };
 		55AF1B7119234B5B00EAFF61 /* PGYMusicListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AF1B7019234B5B00EAFF61 /* PGYMusicListTableViewCell.m */; };
+		55B6F13F1928AD330032B69B /* CUSLayoutSampleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B6F13E1928AD330032B69B /* CUSLayoutSampleFactory.m */; };
 		55D9A9681920747B00BC8819 /* PGYTopListClassifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D9A9671920747B00BC8819 /* PGYTopListClassifyView.m */; };
 		55F3BE83191A764800561524 /* PGYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE7D191A764800561524 /* PGYTabBarController.m */; };
 		55F3BE88191A768C00561524 /* DDScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F3BE87191A768C00561524 /* DDScrollViewController.m */; };
@@ -278,6 +291,32 @@
 		552F4401191C81EC0022EA89 /* PGYTopListMusicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTopListMusicTableViewCell.m; sourceTree = "<group>"; };
 		556060051921BC99000A9545 /* PGYTopListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTopListHeaderView.h; sourceTree = "<group>"; };
 		556060061921BC99000A9545 /* PGYTopListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTopListHeaderView.m; sourceTree = "<group>"; };
+		55782E961927EF2F0076C3E4 /* CUSFillLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSFillLayout.h; sourceTree = "<group>"; };
+		55782E971927EF2F0076C3E4 /* CUSFillLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSFillLayout.m; sourceTree = "<group>"; };
+		55782E981927EF2F0076C3E4 /* CUSLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSLayout.h; sourceTree = "<group>"; };
+		55782E991927EF2F0076C3E4 /* CUSLayoutConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSLayoutConstant.h; sourceTree = "<group>"; };
+		55782E9A1927EF2F0076C3E4 /* CUSLayoutData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSLayoutData.h; sourceTree = "<group>"; };
+		55782E9B1927EF2F0076C3E4 /* CUSLayoutData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSLayoutData.m; sourceTree = "<group>"; };
+		55782E9C1927EF2F0076C3E4 /* CUSLayoutFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSLayoutFrame.h; sourceTree = "<group>"; };
+		55782E9D1927EF2F0076C3E4 /* CUSLayoutFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSLayoutFrame.m; sourceTree = "<group>"; };
+		55782E9E1927EF2F0076C3E4 /* CUSLayoutObject+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CUSLayoutObject+Util.h"; sourceTree = "<group>"; };
+		55782E9F1927EF2F0076C3E4 /* CUSLayoutObject+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CUSLayoutObject+Util.m"; sourceTree = "<group>"; };
+		55782EA01927EF2F0076C3E4 /* CUSLayoutUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSLayoutUtil.h; sourceTree = "<group>"; };
+		55782EA11927EF2F0076C3E4 /* CUSLayoutUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSLayoutUtil.m; sourceTree = "<group>"; };
+		55782EA21927EF2F0076C3E4 /* CUSLinnerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSLinnerData.h; sourceTree = "<group>"; };
+		55782EA31927EF2F0076C3E4 /* CUSLinnerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSLinnerData.m; sourceTree = "<group>"; };
+		55782EA41927EF2F0076C3E4 /* CUSLinnerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSLinnerLayout.h; sourceTree = "<group>"; };
+		55782EA51927EF2F0076C3E4 /* CUSLinnerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSLinnerLayout.m; sourceTree = "<group>"; };
+		55782EA61927EF2F0076C3E4 /* CUSRowData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSRowData.h; sourceTree = "<group>"; };
+		55782EA71927EF2F0076C3E4 /* CUSRowData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSRowData.m; sourceTree = "<group>"; };
+		55782EA81927EF2F0076C3E4 /* CUSRowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSRowLayout.h; sourceTree = "<group>"; };
+		55782EA91927EF2F0076C3E4 /* CUSRowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSRowLayout.m; sourceTree = "<group>"; };
+		55782EAA1927EF2F0076C3E4 /* CUSTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSTableData.h; sourceTree = "<group>"; };
+		55782EAB1927EF2F0076C3E4 /* CUSTableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSTableData.m; sourceTree = "<group>"; };
+		55782EAC1927EF2F0076C3E4 /* CUSTableLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSTableLayout.h; sourceTree = "<group>"; };
+		55782EAD1927EF2F0076C3E4 /* CUSTableLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSTableLayout.m; sourceTree = "<group>"; };
+		55782EAE1927EF2F0076C3E4 /* UIView+CUSLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CUSLayout.h"; sourceTree = "<group>"; };
+		55782EAF1927EF300076C3E4 /* UIView+CUSLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CUSLayout.m"; sourceTree = "<group>"; };
 		557A956A19237C2A00B79608 /* PGYSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYSettingView.h; sourceTree = "<group>"; };
 		557A956B19237C2A00B79608 /* PGYSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYSettingView.m; sourceTree = "<group>"; };
 		557A956D19237C4800B79608 /* PGYSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYSettingViewController.h; sourceTree = "<group>"; };
@@ -298,6 +337,8 @@
 		55AF1B6D19234B4600EAFF61 /* PGYMusicListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYMusicListTableView.m; sourceTree = "<group>"; };
 		55AF1B6F19234B5B00EAFF61 /* PGYMusicListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYMusicListTableViewCell.h; sourceTree = "<group>"; };
 		55AF1B7019234B5B00EAFF61 /* PGYMusicListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYMusicListTableViewCell.m; sourceTree = "<group>"; };
+		55B6F13D1928AD330032B69B /* CUSLayoutSampleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSLayoutSampleFactory.h; sourceTree = "<group>"; };
+		55B6F13E1928AD330032B69B /* CUSLayoutSampleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSLayoutSampleFactory.m; sourceTree = "<group>"; };
 		55D9A9661920747B00BC8819 /* PGYTopListClassifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTopListClassifyView.h; sourceTree = "<group>"; };
 		55D9A9671920747B00BC8819 /* PGYTopListClassifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGYTopListClassifyView.m; sourceTree = "<group>"; };
 		55F3BE7C191A764800561524 /* PGYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGYTabBarController.h; sourceTree = "<group>"; };
@@ -417,6 +458,7 @@
 		550DCBE4191B961900E1016A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				55782E951927EF2F0076C3E4 /* CUSLayout */,
 				550DCBE5191B961900E1016A /* CMCCSDK */,
 				550DCC49191B961900E1016A /* libcrypto.a */,
 				550DCC4A191B961900E1016A /* libssl.a */,
@@ -627,6 +669,41 @@
 				552F43F5191C6F940022EA89 /* OrderMusicInfoParser.m */,
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		55782E951927EF2F0076C3E4 /* CUSLayout */ = {
+			isa = PBXGroup;
+			children = (
+				55B6F13D1928AD330032B69B /* CUSLayoutSampleFactory.h */,
+				55B6F13E1928AD330032B69B /* CUSLayoutSampleFactory.m */,
+				55782E961927EF2F0076C3E4 /* CUSFillLayout.h */,
+				55782E971927EF2F0076C3E4 /* CUSFillLayout.m */,
+				55782E981927EF2F0076C3E4 /* CUSLayout.h */,
+				55782E991927EF2F0076C3E4 /* CUSLayoutConstant.h */,
+				55782E9A1927EF2F0076C3E4 /* CUSLayoutData.h */,
+				55782E9B1927EF2F0076C3E4 /* CUSLayoutData.m */,
+				55782E9C1927EF2F0076C3E4 /* CUSLayoutFrame.h */,
+				55782E9D1927EF2F0076C3E4 /* CUSLayoutFrame.m */,
+				55782E9E1927EF2F0076C3E4 /* CUSLayoutObject+Util.h */,
+				55782E9F1927EF2F0076C3E4 /* CUSLayoutObject+Util.m */,
+				55782EA01927EF2F0076C3E4 /* CUSLayoutUtil.h */,
+				55782EA11927EF2F0076C3E4 /* CUSLayoutUtil.m */,
+				55782EA21927EF2F0076C3E4 /* CUSLinnerData.h */,
+				55782EA31927EF2F0076C3E4 /* CUSLinnerData.m */,
+				55782EA41927EF2F0076C3E4 /* CUSLinnerLayout.h */,
+				55782EA51927EF2F0076C3E4 /* CUSLinnerLayout.m */,
+				55782EA61927EF2F0076C3E4 /* CUSRowData.h */,
+				55782EA71927EF2F0076C3E4 /* CUSRowData.m */,
+				55782EA81927EF2F0076C3E4 /* CUSRowLayout.h */,
+				55782EA91927EF2F0076C3E4 /* CUSRowLayout.m */,
+				55782EAA1927EF2F0076C3E4 /* CUSTableData.h */,
+				55782EAB1927EF2F0076C3E4 /* CUSTableData.m */,
+				55782EAC1927EF2F0076C3E4 /* CUSTableLayout.h */,
+				55782EAD1927EF2F0076C3E4 /* CUSTableLayout.m */,
+				55782EAE1927EF2F0076C3E4 /* UIView+CUSLayout.h */,
+				55782EAF1927EF300076C3E4 /* UIView+CUSLayout.m */,
+			);
+			path = CUSLayout;
 			sourceTree = "<group>";
 		};
 		557A956719237C2A00B79608 /* Setting */ = {
@@ -1088,10 +1165,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55782EBB1927EF300076C3E4 /* UIView+CUSLayout.m in Sources */,
 				550DCC72191B961A00E1016A /* MJRefreshFooterView.m in Sources */,
 				552F43E1191C61ED0022EA89 /* PGYChartInfoInterface.m in Sources */,
 				550DCBD9191B82D900E1016A /* PGYTopMenuButton.m in Sources */,
 				550DCC73191B961A00E1016A /* MJRefreshHeaderView.m in Sources */,
+				55782EB71927EF300076C3E4 /* CUSRowData.m in Sources */,
 				552F43FF191C81C80022EA89 /* PGYTopListMusicTableView.m in Sources */,
 				557A957219237E9A00B79608 /* PGYSettingTableView.m in Sources */,
 				55AF1B6E19234B4600EAFF61 /* PGYMusicListTableView.m in Sources */,
@@ -1102,27 +1181,34 @@
 				55F3BEB0191A95FC00561524 /* PGYMusicProgressBar.m in Sources */,
 				558E42881922684B00EE63E6 /* PGYTopListButton.m in Sources */,
 				55AF1B6B19231D6300EAFF61 /* PGYHomeNavigationController.m in Sources */,
+				55782EB61927EF300076C3E4 /* CUSLinnerLayout.m in Sources */,
 				550DCC6B191B961A00E1016A /* RSADataSigner.m in Sources */,
 				937CA0C3191AF9750017542D /* PuGongyingMusic.xcdatamodeld in Sources */,
 				550DCC6A191B961A00E1016A /* openssl_wrapper.m in Sources */,
 				937CA10A191B0B460017542D /* PGYNewSongViewController.m in Sources */,
 				550DCC67191B961A00E1016A /* base64.m in Sources */,
+				55782EB21927EF300076C3E4 /* CUSLayoutFrame.m in Sources */,
 				552F43F6191C6F940022EA89 /* OrderMusicInfoParser.m in Sources */,
 				556060071921BC99000A9545 /* PGYTopListHeaderView.m in Sources */,
 				552F43E7191C64010022EA89 /* ChartInfoEntity.m in Sources */,
 				937CA0BC191AF9750017542D /* main.m in Sources */,
+				55782EB91927EF300076C3E4 /* CUSTableData.m in Sources */,
 				557A957519237ECF00B79608 /* PGYSettingTableViewCell.m in Sources */,
 				550DCBDA191B82D900E1016A /* PGYTopMenuView.m in Sources */,
 				550DCC6C191B961A00E1016A /* RSADataVerifier.m in Sources */,
 				55F3BE88191A768C00561524 /* DDScrollViewController.m in Sources */,
 				55F3BE9E191A888D00561524 /* PGYCusScrollView.m in Sources */,
 				552F43F0191C6D650022EA89 /* MusicInfoEntity.m in Sources */,
+				55B6F13F1928AD330032B69B /* CUSLayoutSampleFactory.m in Sources */,
+				55782EB41927EF300076C3E4 /* CUSLayoutUtil.m in Sources */,
 				552F43EA191C6C4B0022EA89 /* PGYChartMusicListInterface.m in Sources */,
+				55782EB81927EF300076C3E4 /* CUSRowLayout.m in Sources */,
 				558E428B192293FC00EE63E6 /* PGYMusicListViewController.m in Sources */,
 				552F4402191C81EC0022EA89 /* PGYTopListMusicTableViewCell.m in Sources */,
 				550DCBB9191B712700E1016A /* PGYButtonModel.m in Sources */,
 				552F43ED191C6D560022EA89 /* ChartMusicListParser.m in Sources */,
 				552F43E4191C635B0022EA89 /* ChartInfoParser.m in Sources */,
+				55782EB01927EF300076C3E4 /* CUSFillLayout.m in Sources */,
 				551BC7EA1925F1B9005DB444 /* PGYSearchBar.m in Sources */,
 				937CA107191B0B360017542D /* PGYLocalMusicViewController.m in Sources */,
 				55F3BE83191A764800561524 /* PGYTabBarController.m in Sources */,
@@ -1130,16 +1216,20 @@
 				551FC1471927151100B1D053 /* PGYSettingButton.m in Sources */,
 				550DCC93191BA1EF00E1016A /* PGYMyViewController.m in Sources */,
 				937CA0C0191AF9750017542D /* PGYAppDelegate.m in Sources */,
+				55782EB31927EF300076C3E4 /* CUSLayoutObject+Util.m in Sources */,
 				550DCC70191B961A00E1016A /* MJRefreshBaseView.m in Sources */,
 				55F3BE8B191A76D600561524 /* HomeViewController.m in Sources */,
+				55782EB11927EF300076C3E4 /* CUSLayoutData.m in Sources */,
 				552F43F3191C6EB90022EA89 /* PGYSearchMusicListInterface.m in Sources */,
 				557A957919237F6000B79608 /* PGYSettingModel.m in Sources */,
 				550DCC68191B961A00E1016A /* MD5DataSigner.m in Sources */,
 				550DCC66191B961A00E1016A /* DataVerifier.m in Sources */,
 				550DCC62191B961A00E1016A /* UIImage+Extension.m in Sources */,
 				550DCC71191B961A00E1016A /* MJRefreshConst.m in Sources */,
+				55782EB51927EF300076C3E4 /* CUSLinnerData.m in Sources */,
 				550DCC69191B961A00E1016A /* NSDataEx.m in Sources */,
 				55F3BE9A191A79D400561524 /* PGYTabBarMusicPlayView.m in Sources */,
+				55782EBA1927EF300076C3E4 /* CUSTableLayout.m in Sources */,
 				55F3BE9B191A79D400561524 /* PGYTabBarSettingBgView.m in Sources */,
 				550DCC63191B961A00E1016A /* PGyMyDB.m in Sources */,
 				550DCC90191BA0ED00E1016A /* PGYSearchViewController.m in Sources */,

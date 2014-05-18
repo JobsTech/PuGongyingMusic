@@ -126,7 +126,7 @@
 
 -(void)DDScrollViewDidScroll{
 
-    NSLog(@"scrolling");
+//    NSLog(@"scrolling");
 
 }
 

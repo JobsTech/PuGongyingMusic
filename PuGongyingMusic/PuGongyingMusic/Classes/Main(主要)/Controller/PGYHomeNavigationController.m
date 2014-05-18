@@ -20,8 +20,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   
-    NSLog(@"ssssssssssssssssssss");
+
     [self setNavigationBarHidden:YES];
     self.automaticallyAdjustsScrollViewInsets=NO;
     
