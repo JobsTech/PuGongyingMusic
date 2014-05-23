@@ -42,17 +42,6 @@
 
 
 
-- (void)viewDidAppear:(BOOL)animated{
-//    NSLog(@"%@",self.scrollView);
-//    
-//    for (UIView *view in self.scrollView.subviews) {
-//        NSLog(@"%@",self.view);
-//    }
-    
-    self.scrollView.contentOffset=CGPointZero;
-    
-}
-
 
 
 -(void)setUpViews{
@@ -264,7 +253,7 @@
 
 -(void)selectFinishIndex:(NSInteger)selectIndex{
     [UIView animateWithDuration:0.3  animations:^{
-        self.scrollView.contentOffset=CGPointMake(CGRectGetWidth(self.view.frame)*selectIndex, 0);
+        self.scrollView.contentOffset=CGPointMake(CGRectGetWidth([UIScreen mainScreen].applicationFrame)*selectIndex, 0);
     } completion:^(BOOL finished) {
         
     }];

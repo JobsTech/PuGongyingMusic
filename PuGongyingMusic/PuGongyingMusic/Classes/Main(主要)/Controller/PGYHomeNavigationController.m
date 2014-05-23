@@ -22,9 +22,11 @@
     // Do any additional setup after loading the view.
 
     [self setNavigationBarHidden:YES];
-    self.automaticallyAdjustsScrollViewInsets=NO;
+//    self.automaticallyAdjustsScrollViewInsets=NO;
     
 }
+
+
 
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{

@@ -11,7 +11,12 @@
 
 @interface PGYTopListMusicTableView : UITableView
 
+@property(nonatomic,strong)NSMutableArray *  topListModelArray;
+
 @property(nonatomic,weak)UINavigationController *superController;
 
+@property(nonatomic,strong)NSString *  chartId;
+@property(nonatomic,strong)NSString *  keyWord;
+@property(nonatomic,strong)NSString *  playListId;
 
 @end

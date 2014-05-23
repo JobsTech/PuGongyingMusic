@@ -11,6 +11,7 @@
 #import "PGYSettingViewController.h"
 #import "PGYSettingTableViewCell.h"
 #import "PGYSettingTableView.h"
+#import "MJAboutViewController.h"
 
 @interface PGYSettingView()<UITableViewDataSource,UITableViewDelegate>
 
@@ -49,10 +50,7 @@
 
 
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
 
-    NSLog(@"touchbegin");
-}
 
 -(void)setUpView{
     self.userInteractionEnabled=YES;
@@ -72,16 +70,36 @@
     if (nil==_dataArray) {
         _dataArray=[NSMutableArray array];
        PGYSettingModel *model=[[PGYSettingModel alloc]init];
+        model.title=@"全部循环";
+        model.imageName=@"img_playmode_repeat";
+        
+        
         model.title=@"单曲循环";
+        model.imageName=@"img_playmode_repeatone";
+        
+        model.title=@"顺序播放";
+        model.imageName=@"img_playmode_sequence";
+        
+        model.title=@"随机播放";
+        model.imageName=@"img_playmode_shuffle";
+        
         [_dataArray addObject:model];
         
         PGYSettingModel *model1=[[PGYSettingModel alloc]init];
         model1.title=@"更换背景";
+        model1.imageName=@"img_main_right_menuitem_changeskin";
         [_dataArray addObject:model1];
         
         PGYSettingModel *model2=[[PGYSettingModel alloc]init];
-        model2.title=@"睡眠关闭";
+        model2.title=@"睡眠定时";
+        model2.imageName=@"img_main_right_menuitem_time";
         [_dataArray addObject:model2];
+        
+        PGYSettingModel *model3=[[PGYSettingModel alloc]init];
+        model3.title=@"关于我们";
+        model3.actionControllerClass=[MJAboutViewController class];
+        model3.imageName=@"img_main_right_menuitem_setting";
+        [_dataArray addObject:model3];
         
     }
     
@@ -102,9 +120,16 @@
     
     UINavigationController *navController=[[UINavigationController alloc]init];
     
-    PGYSettingViewController *controller=[[PGYSettingViewController alloc]init];
+    PGYSettingModel *model=[self.dataArray objectAtIndex:indexPath.row];
     
+    
+    PGYSettingViewController *controller=[[PGYSettingViewController alloc]init];
+    if (model.actionControllerClass) {
+        [navController pushViewController:[[model.actionControllerClass alloc]init]  animated:YES];
+    }else{
     [navController pushViewController:controller animated:NO];
+    }
+    
     
     [self.tabBarController presentViewController:navController animated:NO completion:^{
             

@@ -10,4 +10,8 @@
 
 @interface PGYMusicListViewController : UIViewController
 
+@property(nonatomic,strong)NSString *  chartId;
+@property(nonatomic,strong)NSString *  keyWord;
+@property(nonatomic,strong)NSString *  playListId;
+
 @end

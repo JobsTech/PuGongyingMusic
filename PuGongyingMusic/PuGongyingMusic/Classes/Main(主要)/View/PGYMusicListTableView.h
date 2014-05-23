@@ -16,8 +16,13 @@ typedef NS_ENUM(NSInteger, PGYMusicListType) {
     PGYMusicListLocalMusicList,
 };
 
+
+@property(nonatomic,strong)NSString *  chartId;
+@property(nonatomic,strong)NSString *  keyWord;
+@property(nonatomic,strong)NSString *  playListId;
+
+
 - (id)initWithFrame:(CGRect)frame AndMusicListType:(PGYMusicListType)musicListType AndKeyWord:(NSString *)keyWord AndChartId:(NSString *)chartId;
-
-
+-(void)free;
 
 @end

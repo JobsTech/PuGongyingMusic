@@ -10,9 +10,13 @@
 #import "PGYTopListMusicTableViewCell.h"
 #import "PGYTopListClassifyView.h"
 #import "PGYTopListHeaderView.h"
+#import "PGYTopListModel.h"
+#import "PGYTopListBtnModel.h"
 
 
 @interface PGYTopListMusicTableView()<UITableViewDataSource,UITableViewDelegate>
+
+
 
 @end
 
@@ -40,70 +44,52 @@
     return self;
 }
 
+-(void)setTopListModelArray:(NSMutableArray *)topListModelArray{
+    _topListModelArray=topListModelArray;
+    [self reloadData];
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 1;
+    return [self.topListModelArray count];
 }
 
-
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-
-    return 2;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
     PGYTopListMusicTableViewCell *cell=[PGYTopListMusicTableViewCell cellWithTableView:self];
     cell.superController=self.superController;
+    cell.topListModel=[self.topListModelArray objectAtIndex:indexPath.row];
     return cell;
     
 }
 
 
 
-
-
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//
-//
-//    return [[PGYTopListHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 50)];
-//
-//}
-
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    return 500;
+    PGYTopListModel * listModel=[self.topListModelArray objectAtIndex:indexPath.row];
+    
+    int num=[listModel.btnArray count];
+    
+    float contentBtnWH=(self.frame.size.width-10*4)/3+10;
+    
+    int height=(num+2)/3*contentBtnWH+50+10;
+    
+    return height;
 
 }
 
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat sectionHeaderHeight = 50;
-//    if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-//    } else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-//    }
-//}
 
 
 
 //设置cell选中事件
 -(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSLog(@"willSelectRow");
     return nil;
-
-
 }
 
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [self deselectRowAtIndexPath:indexPath animated:NO];
-//}
 
 
 @end

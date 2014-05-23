@@ -66,6 +66,8 @@
     
     searchController=[[PGYSearchViewController alloc]init];
     [self.viewControllerArray replaceObjectAtIndex:0 withObject:searchController];
+    searchController.superNavigationController=self.navigationController;
+    searchController.superController=self;
     
     myController=[[PGYMyViewController alloc]init];
     [self.viewControllerArray replaceObjectAtIndex:1 withObject:myController];

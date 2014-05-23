@@ -20,7 +20,7 @@ typedef NS_OPTIONS(NSInteger,MusicProgressBarStyle){
 
 
 
--(void)updateProgress:(NSNumber *)num;
+-(void)updateProgress:(int)num;
 
 
 @end

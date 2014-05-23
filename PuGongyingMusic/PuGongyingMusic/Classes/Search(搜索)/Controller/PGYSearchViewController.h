@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface PGYSearchViewController : UIViewController
+
+@property(nonatomic,weak)UINavigationController *superNavigationController;
+
+@property(nonatomic,weak)UIViewController *  superController;
+
 
 @end

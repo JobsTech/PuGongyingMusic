@@ -12,7 +12,9 @@
 
 @interface PGYTopListMusicTableViewCell()
 @property(nonatomic,strong)NSMutableArray *classifyTitleArray;
-
+@property(nonatomic,strong)UIView * topView;
+@property(nonatomic,strong)UILabel *topViewTitleLabel;
+@property(nonatomic,strong)UIView * myContentView;
 @end
 
 @implementation PGYTopListMusicTableViewCell
@@ -40,20 +42,10 @@
         UIView *selectedBgView=[[UIView alloc]init];
         [selectedBgView setBackgroundColor:[UIColor clearColor]];
         self.selectedBackgroundView = selectedBgView;
-        [self setUpViews];
+        
         
     }
     return self;
-}
-
-
-
-
-
--(void)setFrame:(CGRect)frame{
-    frame.size.height=500;
- 
-    [super setFrame:frame];
 }
 
 
@@ -71,100 +63,95 @@
 
 -(void)setUpViews{
     
-    [self setTopView];
-    [self setContentView];
+    [self setUpTopView];
+    [self setUpContentView];
     
     
     
 }
 
--(void)setTopView{
+-(void)setUpTopView{
     
     float topViewX=0;
     float topViewY=0;
     float topViewW=self.frame.size.width;
     float topViewH=40;
-    UIView *topView=[[UIView alloc]initWithFrame:CGRectMake(topViewX, topViewY, topViewW, topViewH)];
+    
+    if (nil==self.topView) {
+        self.topView=[[UIView alloc]init];
+        [self addSubview:self.topView];
+    }
+    self.topView.frame=CGRectMake(topViewX, topViewY, topViewW, topViewH);
     
     float topViewTitleX=10;
     float topViewTitleY=10;
     float topViewTitleW=topViewW-20;
     float topViewTitleH=topViewH;
-    UILabel *topViewTitleLabel=[[UILabel alloc]initWithFrame:CGRectMake(topViewTitleX, topViewTitleY, topViewTitleW, topViewTitleH)];
+    if (nil==self.topViewTitleLabel) {
+        self.topViewTitleLabel=[[UILabel alloc]init];
+        [self.topViewTitleLabel setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3]];
+        [self.topView addSubview:self.topViewTitleLabel];
+    }
     
-    topViewTitleLabel.text=@"分类";
-    [topViewTitleLabel setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3]];
-    [topView addSubview:topViewTitleLabel];
+    self.topViewTitleLabel.frame=CGRectMake(topViewTitleX, topViewTitleY, topViewTitleW, topViewTitleH);
+    self.topViewTitleLabel.text=self.topListModel.headTitle;
     
     
-//    UITextField *topViewTitle=[[UITextField alloc]initWithFrame:CGRectMake(topViewTitleX, topViewTitleY, topViewTitleW, topViewTitleH)];
-//    [topView addSubview:topViewTitle];
-    [self addSubview:topView];
+    
 }
--(void)setContentView{
+-(void)setUpContentView{
     
     float contentW=self.frame.size.width;
     float contentH=self.frame.size.height;
-    UIView *contentView=[[UIView alloc]initWithFrame:CGRectMake(0, 50, contentW, contentH)];
+    
+    if (nil==self.myContentView) {
+        self.myContentView=[[UIView alloc]init];
+        [self addSubview:self.myContentView];
+    }
+    self.myContentView.frame=CGRectMake(0, 50, contentW, contentH);
+    
+    for (UIView *view in self.myContentView.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    
     float splitWH=10;
     float contentBtnWH=(contentW-10*4)/3;
-    for (int i=0; i<[self.classifyTitleArray count]; i++) {
+    for (int i=0; i<[self.topListModel.btnArray count]; i++) {
         int cel=i%3; //列
         int row=i/3;    //行
+        PGYTopListBtnModel *btnModel=[self.topListModel.btnArray objectAtIndex:i];
         float contentBtnX=cel*(contentBtnWH+splitWH)+splitWH;
         float contentBtnY=row*(contentBtnWH+splitWH)+splitWH;
         UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(contentBtnX,contentBtnY, contentBtnWH, contentBtnWH)];
-        [btn addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+        [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [btn setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.3]];
-//        [btn setBackgroundColor:[UIColor redColor]];
-        [btn setTitle:[self.classifyTitleArray objectAtIndex:i] forState:UIControlStateNormal];
-        [contentView addSubview:btn];
+        [btn setTitle:btnModel.btnTitle forState:UIControlStateNormal];
+        btn.tag=i;
+        [self.myContentView addSubview:btn];
     }
     
     
     
-    [self addSubview:contentView];
+    
 }
 
 
--(void)click{
-//    UINavigationController *controller=[[UINavigationController alloc]init];
-    PGYMusicListViewController *one=[[PGYMusicListViewController alloc]init];
-    
-   
-    
-//    
-//    [self.superController presentViewController:controller animated:YES completion:^{
-//        NSLog(@"ssssssssssssssssswancheng");
-//    }];
+-(void)click:(UIButton *)btn{
+    PGYMusicListViewController *musicListController=[[PGYMusicListViewController alloc]init];
     self.superController.navigationBarHidden=NO;
-    self.superController.title=@"淘歌";
-    [self.superController pushViewController:one animated:YES];
-}
--(NSMutableArray *)classifyTitleArray{
+    [self.superController pushViewController:musicListController animated:YES];
     
-    if (nil==_classifyTitleArray) {
-        _classifyTitleArray=[NSMutableArray array];
-        [_classifyTitleArray addObject:@"摇滚"];
-        [_classifyTitleArray addObject:@"爵士"];
-        [_classifyTitleArray addObject:@"小清新"];
-        [_classifyTitleArray addObject:@"飞人"];
-        [_classifyTitleArray addObject:@"老歌曲"];
-        [_classifyTitleArray addObject:@"流行歌曲"];
-        [_classifyTitleArray addObject:@"欧美"];
-        [_classifyTitleArray addObject:@"中国风"];
-        [_classifyTitleArray addObject:@"happy"];
-        [_classifyTitleArray addObject:@"not"];
-        [_classifyTitleArray addObject:@"quick"];
-        
-        
+    
+    PGYTopListBtnModel *model=[self.topListModel.btnArray objectAtIndex:btn.tag];
+    if (model.btnType==TopListBtnTypeChartId) {
+        musicListController.chartId=model.chartId;
     }
-    
-    
-    
-    return _classifyTitleArray;
-    
+    if (model.btnType==TopListBtnTypeSearchKeyWord) {
+        musicListController.keyWord=model.btnTitle;
+    }
 }
+
 
 -(void)setHighlighted:(BOOL)highlighted{
 
@@ -184,12 +171,26 @@
 }
 
 
+-(void)setTopListModel:(PGYTopListModel *)topListModel{
+
+    _topListModel = topListModel;
+    
+    int num=[topListModel.btnArray count];
+    
+    float contentBtnWH=(self.frame.size.width-10*4)/3+10;
+    
+    int height=(num+2)/3*contentBtnWH+50+10;
+    
+    CGRect myFrame=self.frame;
+    
+    myFrame.size.height=height;
+
+    self.frame=myFrame;
+    
+    [self setUpViews];
+    
+}
 
 
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-//{
-//    [super setSelected:selected animated:animated];
-// Configure the view for the selected state
-//}
 
 @end

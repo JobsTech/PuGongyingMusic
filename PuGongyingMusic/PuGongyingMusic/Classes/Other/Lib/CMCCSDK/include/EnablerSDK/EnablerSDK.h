@@ -26,7 +26,7 @@ enum {
 {
     id<QueryResultDelegate> delegate;
 }
-@property (nonatomic, assign) id<QueryResultDelegate> delegate;
+@property (nonatomic, weak) id<QueryResultDelegate> delegate;
 
 + (EnablerSDK *)shared;
 

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PGYTabBarSettingBgView : UIView
+@interface PGYTabBarSettingBgView : UIControl
 
 @end

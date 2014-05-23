@@ -11,9 +11,14 @@
 #import "CUSLayout.h"
 #import "CUSRowLayout.h"
 #import "CUSLayoutSampleFactory.h"
+#import "PGYSearchListViewController.h"
 
-@interface PGYSearchViewController ()
+@interface PGYSearchViewController ()<UISearchBarDelegate>
+{
 
+    UISearchDisplayController *searchDisplayController;
+
+}
 @property(nonatomic,strong)PGYSearchBar *searchBar;
 @property(nonatomic,strong)UIView *hotWordView;
 @property(nonatomic,strong)NSMutableArray *  hotWordArray;
@@ -44,8 +49,10 @@
     [self.view addSubview:contentView];
     
     _searchBar=[[PGYSearchBar alloc]initWithFrame:CGRectMake(0, 10, self.view.frame.size.width, 40)];
-    
+    [_searchBar  setPlaceholder:@"请输入歌曲名，歌手名，或专辑名"];
+    _searchBar.delegate=self;
     [contentView addSubview:_searchBar];
+    
     
     
     float scrollViewH=60;
@@ -81,9 +88,11 @@
 
 -(void)click:(UIButton *)btn{
     
-    _searchBar.text=btn.titleLabel.text;
-
-
+//    _searchBar.text=btn.titleLabel.text;
+    
+    PGYSearchListViewController * searchListController=[[PGYSearchListViewController alloc]init];
+    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:searchListController];
+    [self.superController presentViewController:nav animated:NO completion:^{ }];
 
 }
 
@@ -110,7 +119,16 @@
 
 }
 
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
 
+    PGYSearchListViewController * searchListController=[[PGYSearchListViewController alloc]init];
+    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:searchListController];
+    [self.superController presentViewController:nav animated:NO completion:^{ }];
+
+ 
+    
+    return NO;
+}
 
 
 

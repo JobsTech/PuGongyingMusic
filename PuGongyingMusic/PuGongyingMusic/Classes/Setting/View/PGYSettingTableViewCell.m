@@ -11,12 +11,17 @@
 
 @interface PGYSettingTableViewCell()
 
+
+
 @property(nonatomic,strong)UILabel *title;
 
 @property(nonatomic,strong)UIView *line;
 
 
 @property(nonatomic,strong)UIButton *button;
+
+
+@property(nonatomic,strong)UIImageView *  settingImageView;
 
 @end
 
@@ -49,9 +54,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        
         [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
-//        self.selectedBackgroundView.backgroundColor=
+        self.selectedBackgroundView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
         [self setUpViews];
         
             }
@@ -61,9 +65,7 @@
 
 -(void)setUpViews{
 //    if (self.settingModel.imageName) {
-//        UIImage *img=[UIImage imageNamed:self.settingModel.imageName];
-//        UIImageView *imgView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-//        imgView.image=img;
+
 //        
 //        
 //    }
@@ -76,9 +78,11 @@
     
     [self addSubview:_line];
 
+    _settingImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    _settingImageView.contentMode=UIViewContentModeCenter;
+    [self addSubview:_settingImageView];
     
-    
-    _title=[[UILabel alloc]initWithFrame:CGRectMake(20, 0, self.frame.size.width, 40)];
+    _title=[[UILabel alloc]initWithFrame:CGRectMake(40, 0, self.frame.size.width, 40)];
     [_title setBackgroundColor:[UIColor colorWithHue:0 saturation:0 brightness:0 alpha:0]];
     _title.textColor=[UIColor whiteColor];
     _title.textColor=[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
@@ -96,7 +100,7 @@
 
 
 -(void)click:(UIButton *)btn{
-    NSLog(@"");
+
 
 }
 
@@ -109,30 +113,30 @@
 
 }
 
+
+
 -(void)setHighlighted:(BOOL)highlighted{
     
     [super setHighlighted:highlighted];
-    
     if (highlighted) {
-        [self setBackgroundColor:[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.9]];
+        [self setBackgroundColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.9]];
     }else{
-        [self setBackgroundColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0]];
+        [self setBackgroundColor:[UIColor clearColor]];
     }
 
-
+    
 }
+
 
 -(void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated{
     
-//    [self setBackgroundColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1]];
     [super setHighlighted:highlighted animated:animated  ];
 
     if (highlighted) {
-        [self setBackgroundColor:[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:0.9]];
+        [self setBackgroundColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.9]];
     }else{
         [self setBackgroundColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0]];
     }
-//     [self setBackgroundColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1]];
 }
 
 
@@ -140,22 +144,22 @@
 
 
 -(void)setSelected:(BOOL)selected{
-
-
 }
 
 
 -(void)setSelected:(BOOL)selected animated:(BOOL)animated{
-
-
 }
 
 
 -(void)setSettingModel:(PGYSettingModel *)settingModel{
     _settingModel=settingModel;
     _title.text=settingModel.title;
-    
+    if (settingModel.imageName) {
+        UIImage *img=[UIImage imageNamed:settingModel.imageName];
+        _settingImageView.image=img;
+    }
 }
+
 
 
 

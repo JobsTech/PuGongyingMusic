@@ -144,6 +144,7 @@
     int buttomHeight=50;
     
     _buttomCusView=[[PGYTabBarButtomCusView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-buttomHeight, self.view.frame.size.width, buttomHeight)];
+    _buttomCusView.tabBarController=self;
     [self.view addSubview:_buttomCusView];
     
     _musicPlayView=[[PGYTabBarMusicPlayView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height)];
@@ -334,25 +335,24 @@
        
         [self.settingBgView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:fabsf(x/settingViewW*0.5)+0.2]];
     }
-
-//    NSLog(@"adddtabBarSettinBG");
-
-    
-    
-    
-    
 }
 
 
+/**
+    拉取出设置view 时候的遮挡view
+ */
 
 -(PGYTabBarSettingBgView *)settingBgView{
     if (nil==_settingBgView) {
         self.settingBgView=[[PGYTabBarSettingBgView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        [self.settingBgView addTarget:self action:@selector(closeSettingViews) forControlEvents:UIControlEventTouchUpInside];
     }
     return _settingBgView;
 
 }
-
+/**
+ 拉取出设置view 时候的遮挡view的滑动事件检测
+ */
 
 -(UIPanGestureRecognizer *)settingBgPanTap{
     if (nil==_settingBgPanTap) {
@@ -376,6 +376,29 @@
 
 }
 
+
+-(void)openSettingViews{
+    
+    
+    [self.view addSubview:self.settingBgView];
+    [self.settingBgView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
+    [UIView animateWithDuration:0.3 animations:^{
+        float settingViewW=self.settingView.frame.size.width;
+        float screenW=[UIScreen mainScreen].bounds.size.width;
+        self.view.frame=CGRectMake(-settingViewW, 0, screenW+settingViewW,self.view.frame.size.height);
+        [self.settingBgView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.7]];
+        
+    } completion:^(BOOL finished) {
+        [self.settingBgView addGestureRecognizer:self.settingBgPanTap];
+    }];
+
+
+
+}
+
+/**
+    
+ */
 
 
 -(void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion{

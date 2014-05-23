@@ -15,5 +15,7 @@
 
 -(void)closeSettingViews;
 
+-(void)openSettingViews;
+
 
 @end

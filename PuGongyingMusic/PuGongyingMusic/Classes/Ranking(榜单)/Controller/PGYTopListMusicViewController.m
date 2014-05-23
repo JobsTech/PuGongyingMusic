@@ -11,13 +11,21 @@
 #import "ChartInfoEntity.h"
 #import "PGYTopListMusicTableView.h"
 #import "PGYTopListClassifyView.h"
-
+#import "PGYTopListModel.h"
+#import "PGYTopListBtnModel.h"
 
 @interface PGYTopListMusicViewController ()<PGYChartInfoInterfaceDelegate>
+
+
+
 {
     PGYChartInfoInterface * chartInfoInterface;
-
+    
 }
+
+@property(nonatomic,strong)PGYTopListMusicTableView *  tableView;
+@property(nonatomic,strong)NSMutableArray *  topListModelArray;
+
 
 @end
 
@@ -25,15 +33,15 @@
 
 
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     chartInfoInterface=[[PGYChartInfoInterface alloc]init];
     chartInfoInterface.delegate=self;
 //    [chartInfoInterface downloadChartInfoWithPageNum:@"1" AndCurrPageCount:@"20"];
-    
-    
     [self setUpViews];
 }
 
@@ -41,45 +49,127 @@
 
 -(void)setUpViews{
     
-    
-//     PGYTopListClassifyView *topListClassifyView=[[PGYTopListClassifyView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)];
-//    
-//    [self.view addSubview:topListClassifyView];
-    
-    PGYTopListMusicTableView *tableView=[[PGYTopListMusicTableView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height-60-50)];
-    tableView.superController=self.superController;
-    [self.view addSubview:tableView];
+    self.tableView=[[PGYTopListMusicTableView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height-60-50)];
+    self.tableView.superController=self.superController;
+    self.tableView.topListModelArray=self.topListModelArray;
+    [self.view addSubview:self.tableView];
 
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(NSMutableArray *)topListModelArray{
+    if (nil==_topListModelArray) {
+        
+        _topListModelArray=[NSMutableArray array];
+        
+        
+        PGYTopListModel  * typeModel=[PGYTopListModel new];
+        typeModel.headTitle=@"分类";
+        typeModel.btnArray=[NSMutableArray array];
+        PGYTopListBtnModel * typeBtnModel1=[PGYTopListBtnModel new];
+        typeBtnModel1.btnTitle=@"摇滚";
+        typeBtnModel1.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel1];
+        
+        PGYTopListBtnModel * typeBtnModel2=[PGYTopListBtnModel new];
+        typeBtnModel2.btnTitle=@"爵士";
+        typeBtnModel2.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel2];
+        
+        PGYTopListBtnModel * typeBtnModel3=[PGYTopListBtnModel new];
+        typeBtnModel3.btnTitle=@"流行歌曲";
+        typeBtnModel3.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel3];
+        
+        PGYTopListBtnModel * typeBtnModel4=[PGYTopListBtnModel new];
+        typeBtnModel4.btnTitle=@"欧美";
+        typeBtnModel4.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel4];
+        
+        PGYTopListBtnModel * typeBtnModel5=[PGYTopListBtnModel new];
+        typeBtnModel5.btnTitle=@"中国风";
+        typeBtnModel5.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel5];
+        
+        PGYTopListBtnModel * typeBtnModel6=[PGYTopListBtnModel new];
+        typeBtnModel6.btnTitle=@"老歌曲";
+        typeBtnModel6.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel6];
+        
+        PGYTopListBtnModel * typeBtnModel7=[PGYTopListBtnModel new];
+        typeBtnModel7.btnTitle=@"说唱";
+        typeBtnModel7.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel7];
+        
+        PGYTopListBtnModel * typeBtnModel8=[PGYTopListBtnModel new];
+        typeBtnModel8.btnTitle=@"古风";
+        typeBtnModel8.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel8];
+        
+        PGYTopListBtnModel * typeBtnModel9=[PGYTopListBtnModel new];
+        typeBtnModel9.btnTitle=@"古典";
+        typeBtnModel9.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel9];
+        
+        PGYTopListBtnModel * typeBtnModel10=[PGYTopListBtnModel new];
+        typeBtnModel10.btnTitle=@"轻音乐";
+        typeBtnModel10.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel10];
+        
+        PGYTopListBtnModel * typeBtnModel11=[PGYTopListBtnModel new];
+        typeBtnModel11.btnTitle=@"蓝调";
+        typeBtnModel11.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel11];
+        
+        PGYTopListBtnModel * typeBtnModel12=[PGYTopListBtnModel new];
+        typeBtnModel12.btnTitle=@"电子";
+        typeBtnModel12.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel12];
+        
+        PGYTopListBtnModel * typeBtnModel13=[PGYTopListBtnModel new];
+        typeBtnModel13.btnTitle=@"钢琴曲";
+        typeBtnModel13.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel13];
+        
+        PGYTopListBtnModel * typeBtnModel14=[PGYTopListBtnModel new];
+        typeBtnModel14.btnTitle=@"R&B";
+        typeBtnModel14.btnType=TopListBtnTypeSearchKeyWord;
+        [typeModel.btnArray addObject:typeBtnModel14];
+        
+        [_topListModelArray addObject:typeModel];
+
+        
+    }
+    return _topListModelArray;
+
 }
+
 
 
 -(void)arrayWithDownChartInfoComplete:(NSMutableArray *)chartInfoArray{
+    PGYTopListModel  * chartModel=[PGYTopListModel new];
+    chartModel.headTitle=@"榜单";
+    chartModel.btnArray=[NSMutableArray array];
     for (ChartInfoEntity *model in chartInfoArray) {
-        NSLog(@"%@",model);
+        
+        PGYTopListBtnModel * chartBtnModel=[PGYTopListBtnModel new];
+        chartBtnModel.btnTitle=model.chartName;
+        [chartBtnModel.btnTitle stringByReplacingOccurrencesOfString:@"蒲公英" withString:@"咪咕"];
+        chartBtnModel.chartId=model.chartCode;
+        chartBtnModel.btnType=TopListBtnTypeChartId;
+        [chartModel.btnArray addObject:chartBtnModel];
+    }
+    
+    if ([self.topListModelArray count]>=2) {
+        [self.topListModelArray replaceObjectAtIndex:1 withObject:chartModel];
+    }else{
+        [self.topListModelArray addObject:chartModel];
     }
 
-    
+    [self.tableView reloadData];
 }
 
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

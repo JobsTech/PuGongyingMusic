@@ -19,7 +19,7 @@
 
 @property(nonatomic,strong)NSString *  imageName;
 
-@property(nonatomic,strong)Class  antionControllerClass;
+@property(nonatomic,strong)Class  actionControllerClass;
 
 @property(nonatomic,strong)NSMutableArray  * childSettingModel;
 

@@ -240,6 +240,7 @@ static NSString *kresMsg = @"resMsg";
     {
         self.resMsg = [NSString stringWithFormat:@"%@", self.currentString];
     }
+    self.entity.musicInfoType=MusicInfoTypesNet;
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string

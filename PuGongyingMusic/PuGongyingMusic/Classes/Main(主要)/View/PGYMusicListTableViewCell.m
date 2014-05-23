@@ -15,6 +15,10 @@
 
 @property(nonatomic,strong)UILabel *singerName;
 
+@property(nonatomic,strong)UIImageView *loveImageView;
+
+@property(nonatomic,strong)UIView *  lineView;
+
 
 @end
 
@@ -42,42 +46,47 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
+        self.selectedBackgroundView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
         [self setUpViews];
     }
     return self;
 }
 
+-(void)setFrame:(CGRect)frame{
+
+//    frame.origin.x+=10;
+//    frame.size.width-=20;
+    [super setFrame:frame];
+}
+
 
 
 -(void)setUpViews{
+    UIColor * textColor=[UIColor whiteColor];
     
-    self.songName.text=@"海阔天空";
+    self.songName=[[UILabel alloc]initWithFrame:CGRectMake(60, 0, 100, 20)];
+    [self.songName setTextColor:textColor];
+    self.singerName=[[UILabel alloc]initWithFrame:CGRectMake(60, 20, 100, 20)];
+    [self.singerName setTextColor:textColor];
+    self.loveImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    self.loveImageView.image=[UIImage imageNamed:@"Recognize_Heart_Normal"];
     
-    self.singerName.text=@"海阔";
+    float lineViewX=50;
+    float lineViewW=self.frame.size.width-lineViewX;
+    self.lineView=[[UIView alloc]initWithFrame:CGRectMake(lineViewX, self.frame.size.height-1,lineViewW, 1)];
+    [self.lineView setBackgroundColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.3]];
     
     [self addSubview:self.songName];
     [self addSubview:self.singerName];
-
+    [self addSubview:self.loveImageView];
+    [self addSubview:self.lineView];
 
 
 }
 
 
--(UILabel *)songName{
-    if (nil==_songName) {
-        _songName=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 20)];
-    }
-    return _songName;
 
-}
-
--(UILabel *)singerName{
-    if (nil==_singerName) {
-        _singerName=[[UILabel alloc]initWithFrame:CGRectMake(0, 20, 100, 20)];
-    }
-
-    return _singerName;
-}
 
 
 -(void)setMusicInfo:(MusicInfoEntity *)musicInfo{
@@ -88,12 +97,36 @@
 }
 
 
+-(void)setSelected:(BOOL)selected{}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated{}
+
+
+
+//
+//-(void)setHighlighted:(BOOL)highlighted{
+//    
+//    [super setHighlighted:highlighted];
+//
+//    if (highlighted) {
+//        [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
+//    }else{
+//        [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
+//    }
+//    
+//    
+//}
+
+-(void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated{
+    
+    [super setHighlighted:highlighted animated:animated  ];
+    
+    if (highlighted) {
+        [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
+    }else{
+        [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.2]];
+    }
 }
 
 @end

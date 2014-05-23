@@ -11,18 +11,24 @@
 #import "PGYChartMusicListInterface.h"
 #import "PGYSearchMusicListInterface.h"
 #import "MusicInfoEntity.h"
-
-
-
+#import "MJRefresh.h"
+#import "PGYmusicPlay.h"
+#import <AVFoundation/AVFoundation.h>
+#import "AudioStreamer.h"
+#import "MyAudioPlayer.h"
 
 
 
 
 @interface PGYMusicListTableView()<UITableViewDataSource,UITableViewDelegate,PGYChartMusicListInterfaceDelegate,PGYSearchMusicListInterfaceDelegate>
 
-@property(nonatomic,strong)NSString *keyWord;
 
-@property(nonatomic,strong)NSString *chartId;
+{
+    bool loadDataEnd;
+}
+
+
+
 
 @property(nonatomic,assign)PGYMusicListType musicListType;
 
@@ -33,17 +39,22 @@
 
 @property(nonatomic,strong)NSMutableArray *dataArray;
 
+@property(nonatomic,strong)AVAudioPlayer *  audioPlayer;
+
+@property(nonatomic,strong)AudioStreamer *  audioStreamer;
+
+@property(nonatomic,strong)MJRefreshFooterView *  footer;
 
 @end
 
 @implementation PGYMusicListTableView
 
-
+#pragma mark 初始化部分
 
 
 - (id)initWithFrame:(CGRect)frame AndMusicListType:(PGYMusicListType)musicListType AndKeyWord:(NSString *)keyWord AndChartId:(NSString *)chartId
 {
-    
+    loadDataEnd=NO;
     self.musicListType=musicListType;
     self.keyWord=keyWord;
     self.chartId=chartId;
@@ -54,7 +65,16 @@
     return self;
 }
 
+/**
+    取消掉下拉弹簧效果。  上拉可以 
+ */
 
+-(void)setContentOffset:(CGPoint)contentOffset{
+    
+    contentOffset.y=contentOffset.y<0?0:contentOffset.y;
+    
+    [super setContentOffset:contentOffset];
+}
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -62,26 +82,73 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.1]];
+        self.separatorStyle=NO;
+//        self.bounces=NO;
         self.dataSource=self;
         self.delegate=self;
-        
-        [self loadNetData];
+        [self setUpViews];
     }
     return self;
 }
 
--(void)loadNetData{
+-(void)setUpViews{
+    [self addFooter];
+    
+}
+
+- (void)addFooter
+{
+    __unsafe_unretained PGYMusicListTableView *tv=self;
+    
+    MJRefreshFooterView *footer = [MJRefreshFooterView footer];
+    footer.scrollView = self;
+    
+    footer.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
+        
+        int pageNum=([tv->_dataArray  count]+19)/20+1;
+        
+        [tv performSelector:@selector(loadNetDataWithPageNum:) withObject:[NSString stringWithFormat:@"%d",pageNum]];
+        
+        NSLog(@"%@----开始进入刷新状态", refreshView.class);
+    };
+    _footer = footer;
+}
+
+-(void)loadNetDataWithPageNum:(NSString *)pageNum{
     if (self.musicListType==PGYMusicListNetChartMusicList) {
-        [self.chartMusicListInterface downloadMusicListWithChartId:self.chartId AndPageNum:@"1" AndCurrPageCount:@"20"];
+        [self.chartMusicListInterface downloadMusicListWithChartId:self.chartId AndPageNum:pageNum AndCurrPageCount:@"20"];
        
     }
     
     if (self.musicListType==PGYMusicListNetSearchMusicList) {
-        [self.searchMusicListInterface downloadMusicListWithSearchKey:self.keyWord AndPageNum:@"1" AndCurrPageCount:@"20"];
+        [self.searchMusicListInterface downloadMusicListWithSearchKey:self.keyWord AndPageNum:pageNum AndCurrPageCount:@"20"];
     }
+}
 
 
+-(void)setChartId:(NSString *)chartId{
+    if ([_chartId isEqual:chartId]) return;
+    _chartId=chartId;
+    self.musicListType=PGYMusicListNetChartMusicList;
+    [self.dataArray removeAllObjects];
+    [self loadNetDataWithPageNum:@"1"];
+}
 
+-(void)setKeyWord:(NSString *)keyWord{
+    if ([_keyWord isEqual:keyWord]) return;
+    self.musicListType=PGYMusicListNetSearchMusicList;
+    _keyWord=keyWord;
+    [self.dataArray removeAllObjects];
+    [self loadNetDataWithPageNum:@"1"];
+    
+}
+
+-(void)setPlayListId:(NSString *)playListId{
+    if ([_playListId isEqual:playListId]) return;
+    
+    _playListId=playListId;
+    [self.dataArray removeAllObjects];
 }
 
 
@@ -131,8 +198,26 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    MusicInfoEntity *currPlayMusic=[self.dataArray objectAtIndex:indexPath.row];
+    [[MyAudioPlayer  shareMyAudioPlayer] playWithMusicInfo:currPlayMusic];
     
-    [self deselectRowAtIndexPath:indexPath animated:NO];
+//    self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:currPlayMusic.songListenDir] error:nil];
+//    
+//    [self.audioPlayer play];
+    
+//    [self deselectRowAtIndexPath:indexPath animated:NO];
+    
+//    [[PGYMusicPlay shareMusicPlay] playMusicWithMusic:[self.dataArray objectAtIndex:indexPath.row]];
+//    
+
+    
+//    NSURL *url = [NSURL URLWithString:currPlayMusic.ringListenDir];
+//    [[AudioStreamer shareAudioStreamer] stop];
+//    
+//	self.audioStreamer = [[AudioStreamer shareAudioStreamer] initWithURL:url];
+//    
+//    [self.audioStreamer start];
+    
 }
 
 
@@ -140,21 +225,32 @@
 
 -(void)arrayWithDownChartMusicListComplete:(NSMutableArray *)musicInfoArray{
     
-   
+    if (nil==musicInfoArray||[musicInfoArray count]==0) {
+        loadDataEnd=YES;
+        
+    }
+    
     [self.dataArray addObjectsFromArray:musicInfoArray];
     
     
     [self reloadData];
+    
+    [_footer endRefreshing];
 
 }
 
 
 -(void)arrayWithDownSearchMusicListComplete:(NSMutableArray *)musicInfoArray{
-    
+    if (nil==musicInfoArray||[musicInfoArray count]==0) {
+        loadDataEnd=YES;
+        
+    }
     [self.dataArray addObjectsFromArray:musicInfoArray];
     
     
     [self reloadData];
+    
+    [_footer endRefreshing];
 
 }
 
@@ -163,6 +259,19 @@
 
     if (nil==_dataArray) {
         _dataArray=[NSMutableArray array];
+//        MusicInfoEntity *entity=[[MusicInfoEntity alloc]init];
+//        
+//        entity.songName=@"zjl";
+//        
+//        entity.singerName=@"zjl zjl";
+//        
+//        for (int i=0; i<20; i++) {
+//            
+//        
+//        
+//        [_dataArray addObject:entity];
+//        
+//        }
     }
     return _dataArray;
 }
@@ -170,20 +279,11 @@
 
 
 
--(void)viewWillDisappear:(BOOL)animated{
-    NSLog(@"willdisappear");
+-(void)free{
+    [_footer free];
     _searchMusicListInterface.delegate=nil;
     _searchMusicListInterface=nil;
-    
-}
 
-
-
--(void)dealloc{
-    NSLog(@"dealloc");
-    _searchMusicListInterface.delegate=nil;
-    _searchMusicListInterface=nil;
-    
 }
 
 @end

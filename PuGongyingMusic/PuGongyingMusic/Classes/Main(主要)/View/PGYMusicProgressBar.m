@@ -44,9 +44,12 @@
 -(void)setUpViews{
     if (_needSlipRect) {
         _slipRect=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+        [self addSubview:_slipRect];
     }
     
-    _bgRect = [[UIView alloc]initWithFrame:self.frame];
+    _bgRect = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    
+    
     if (_style==MusicProgressBarStyleBlack) {
         [_bgRect setBackgroundColor:[UIColor blackColor]];
         
@@ -60,9 +63,9 @@
     [self addSubview:_bgRect];
     
     _progressRect=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, self.frame.size.height)];
-    [_progressRect setBackgroundColor:[UIColor blueColor]];
+    [_progressRect setBackgroundColor:[UIColor grayColor]];
     
-    
+    [self addSubview:_progressRect];
     
 
 
@@ -93,9 +96,9 @@
  */
 
 
--(void)updateProgress:(NSNumber *)num{
-
-
+-(void)updateProgress:(int)num{
+    float progressW=self.frame.size.width/100*num;
+    _progressRect.frame=CGRectMake(0, 0, progressW,self.frame.size.height);
 
 }
 

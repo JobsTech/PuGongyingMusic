@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PGYTabBarController.h"
 
 @interface PGYTabBarButtomCusView : UIView
+
+@property(nonatomic,weak) PGYTabBarController*  tabBarController;
 
 @end
